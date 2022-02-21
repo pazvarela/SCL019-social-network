@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 import './style.css'
 import { myFunction } from './lib/index.js';
-import { router } from './routers/router';
+import { routers } from './routers/router'
 
 myFunction();
 
@@ -19,7 +19,6 @@ function toggleMenu(event) {
 // event
 menu.addEventListener('click', toggleMenu, false);
 
-
 window.addEventListener('hashchange', () => {
-    router(window.location.hash)
+
 })

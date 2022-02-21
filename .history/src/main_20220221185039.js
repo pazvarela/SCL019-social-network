@@ -19,7 +19,6 @@ function toggleMenu(event) {
 // event
 menu.addEventListener('click', toggleMenu, false);
 
-
 window.addEventListener('hashchange', () => {
-    router(window.location.hash)
+
 })
