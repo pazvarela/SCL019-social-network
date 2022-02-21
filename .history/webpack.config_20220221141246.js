@@ -9,8 +9,14 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /.css$/i,
+            test: /\.css$/i,
             use: ["style-loader", "css-loader"],
+        }]
+    },
+    module: {
+        rules: [{
+            test: /\.html$/i,
+            loader: 'html-loader',
         }]
     },
     plugins: [

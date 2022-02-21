@@ -1,16 +1,22 @@
-const HTMLwebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const HTMLwebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
 module.exports = {
-    mode: 'development',
     entry: './src/main.js',
     output: {
-        path: __dirname + '/dist',
+        path: path.resolve(__dirname, 'public/js'),
         filename: 'bundle.js'
+    },
+    mode: 'none',
+    module: {
+        rules: [{
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+        }]
     },
     module: {
         rules: [{
-            test: /.css$/i,
-            use: ["style-loader", "css-loader"],
+            test: /\.html$/i,
+            loader: "html-loader",
         }]
     },
     plugins: [

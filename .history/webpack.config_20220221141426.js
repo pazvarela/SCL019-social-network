@@ -13,6 +13,12 @@ module.exports = {
             use: ["style-loader", "css-loader"],
         }]
     },
+    module: {
+        rules: [{
+            test: /\.html$/i,
+            loader: 'html-loader',
+        }]
+    },
     plugins: [
         new HTMLwebpackPlugin({
             template: './src/index.html'
