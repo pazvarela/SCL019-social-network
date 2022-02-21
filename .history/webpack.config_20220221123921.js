@@ -1,0 +1,19 @@
+const HTMLwebpackPlugin = require('html-webpack-plugin')
+module.exports = {
+    entry: './src/main.js',
+    output: {
+        path: __dirname + '/dist',
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [{
+            test: /.css$/,
+            user: ['style-loader', 'css-loader']
+        }]
+    },
+    plugins: [
+        new HTMLwebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
+}
