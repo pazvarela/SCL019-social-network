@@ -7,6 +7,7 @@
 @media (min-width: 600px) {
     .hamburger {
         display: none;
+        background-color: black;
     }
 }
 
@@ -31,7 +32,7 @@
 }
 
 .hamburger.is-active {
-    background-color: transparent;
+    background-color: none;
 }
 
 ._layer {

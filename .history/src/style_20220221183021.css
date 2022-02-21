@@ -4,10 +4,9 @@
     box-sizing: 0;
 }
 
-@media (min-width: 600px) {
-    .hamburger {
-        display: none;
-    }
+@media screen {
+    min-width: 300px;
+    max-width: 450px;
 }
 
 .hamburger {
@@ -31,7 +30,7 @@
 }
 
 .hamburger.is-active {
-    background-color: transparent;
+    background-color: none;
 }
 
 ._layer {

@@ -31,7 +31,7 @@
 }
 
 .hamburger.is-active {
-    background-color: transparent;
+    background-color: blue;
 }
 
 ._layer {

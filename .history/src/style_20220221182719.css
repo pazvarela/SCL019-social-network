@@ -4,12 +4,6 @@
     box-sizing: 0;
 }
 
-@media (min-width: 600px) {
-    .hamburger {
-        display: none;
-    }
-}
-
 .hamburger {
     position: fixed;
     background-color: transparent;
@@ -31,7 +25,7 @@
 }
 
 .hamburger.is-active {
-    background-color: transparent;
+    background-color: none;
 }
 
 ._layer {
@@ -75,11 +69,11 @@
     transform: translateY(-200%) rotate(135deg) !important;
 }
 
-.menu-toggle.is_active {
+.menuppal.is_active {
     transform: translate3d(0px, 0px, 0px);
 }
 
-.menu-toggle {
+.menuppal {
     background-color: rgba(255, 255, 255, 0.95);
     bottom: 0;
     height: 100%;
@@ -93,12 +87,12 @@
     z-index: 1001;
 }
 
-.menu-toggle ul {
+.menuppal ul {
     margin: 0;
     padding: 0;
 }
 
-.menu-toggle ul li {
+.menuppal ul li {
     list-style: none;
     text-align: center;
     font-family: Verdadna, Arial, Helvetica;
@@ -111,12 +105,12 @@
     font-weight: bold;
 }
 
-.menu-toggle ul li a {
+.menuppal ul li a {
     text-decoration: none;
     color: #369;
 }
 
-.menu-toggle ul li a:hover {
+.menuppal ul li a:hover {
     text-decoration: none;
     color: #333;
 }
