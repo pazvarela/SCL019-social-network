@@ -7,22 +7,22 @@ export const login = () => {
         .signInWithPopup(provider)
         .then((result) => {
             /** @type {firebase.auth.OAuthCredential} */
-            let credential = result.credential;
+            var credential = result.credential;
 
             // This gives you a Google Access Token. You can use it to access the Google API.
-            let token = credential.accessToken;
+            var token = credential.accessToken;
             // The signed-in user info.
-            let user = result.user;
+            var user = result.user;
             console.log('user', user)
                 // ...
         }).catch((error) => {
             // Handle Errors here.
-            let errorCode = error.code;
-            let errorMessage = error.message;
+            var errorCode = error.code;
+            var errorMessage = error.message;
             // The email of the user's account used.
-            let email = error.email;
+            var email = error.email;
             // The firebase.auth.AuthCredential type that was used.
-            let credential = error.credential;
+            var credential = error.credential;
             console.log('error', errorMessage)
                 // ...
         });

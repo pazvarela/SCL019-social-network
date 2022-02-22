@@ -12,8 +12,8 @@ export const register = () => {
       <input class=inputReg type="text" placeholder="Usuario" id="user">
       <input class=inputReg type="email" placeholder="Correo Electronico" id="emailReg" name ="email">
       <input class=inputReg type="password" placeholder="Contraseña" id="passReg" name ="password">
-      <button type="submit" id="btnRegistrer">CONFIRMAR</button> 
-      <a href="/#/login"><button type="button" id="btnCancel">CANCELAR</button></a>
+      <button type="submit" id="btnRegistro">CONFIRMAR</button> 
+      <a href="/#/login"><button type="button" id="btnCancelar">CANCELAR</button></a>
           </form>
       </div>
       `;

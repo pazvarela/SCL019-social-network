@@ -8,6 +8,6 @@ export const home = () => {
       </div>
       `;
     divHome.innerHTML = viewHome;
-    console.log(divHome)
+
     return divHome;
 };
