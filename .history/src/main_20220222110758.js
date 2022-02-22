@@ -4,3 +4,9 @@ import { myFunction } from './lib/index.js';
 import { router } from './routers/router';
 
 myFunction();
+
+
+
+window.addEventListener('hashchange', () => {
+    router(window.location.hash)
+})

@@ -22,26 +22,4 @@ const templateviews = (hash) => {
             containerRoot.innerHTML = 'ERROR 404';
             break;
     }
-};
-
-export const changeRouter = (hash) => {
-    if (hash === '#/') {
-        return templateviews(hash);
-    }
-    if (hash === '#/log') {
-        return templateviews(hash);
-    }
-    if (hash === '#/register') {
-        return templateviews(hash);
-    }
-    if (hash === '#/post') {
-        return templateviews(hash);
-    }
-    return templateviews(hash);
-};
-
-// Cambia página frente a cambio de #
-
-window.addEventListener('hashchange', () => {
-    changeRouter(window.location.hash);
-}, false);
+}

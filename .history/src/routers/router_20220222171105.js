@@ -26,18 +26,18 @@ const templateviews = (hash) => {
 
 export const changeRouter = (hash) => {
     if (hash === '#/') {
-        return templateviews(hash);
+        return showTemplate(hash);
     }
     if (hash === '#/log') {
-        return templateviews(hash);
+        return showTemplate(hash);
     }
     if (hash === '#/register') {
-        return templateviews(hash);
+        return showTemplate(hash);
     }
     if (hash === '#/post') {
-        return templateviews(hash);
+        return showTemplate(hash);
     }
-    return templateviews(hash);
+    return showTemplate(hash);
 };
 
 // Cambia página frente a cambio de #
