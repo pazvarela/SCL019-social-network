@@ -9,7 +9,7 @@ const templateviews = (hash) => {
         case '#/':
             containerRoot.appendChild(log());
             break;
-        case '#/login':
+        case '#/log':
             containerRoot.appendChild(login());
             break;
         case '#/register':
@@ -28,7 +28,7 @@ export const changeRouter = (hash) => {
     if (hash === '#/') {
         return templateviews(hash);
     }
-    if (hash === '#/login') {
+    if (hash === '#/log') {
         return templateviews(hash);
     }
     if (hash === '#/register') {
