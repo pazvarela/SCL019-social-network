@@ -1,5 +1,5 @@
 export const login = () => {
-    const rootHtml = document.getElementById("root");
+    const rootHtml = document.getElementById("root")
     const viewHome = document.createElement("div");
     const formularioHome = `<form id = "formularioAcceso" class = "formularioAcceso">
     <div class= "email> Email </div>
