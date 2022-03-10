@@ -1,10 +1,9 @@
-@media (min-width: 340px) {
+@media (min-width: 320px) {
     body {
         justify-content: center;
         background-color: var(--brown-dark-color);
     }
-    .container>container-img {
+    .container-img {
         align-items: center;
-        background-color: blueviolet;
     }
 }

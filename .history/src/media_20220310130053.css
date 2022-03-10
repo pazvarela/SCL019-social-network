@@ -1,0 +1,9 @@
+@media (min-width: 320px) {
+    body {
+        justify-content: center;
+        background-color: var(--brown-dark-color);
+    }
+    .container {
+        justify-content: center;
+    }
+}
