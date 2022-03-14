@@ -1,41 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+import { header } from './components/header.js'
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="media.css" />
-    <title>BarterBook</title>
-</head>
+header()
 
-<body>
-    <!-- <header class="header">
-        <div class="container">
-            <img class="container-img" src="./img/logo-mobil.png" alt="logo BarterBook con un ícono del libro abierto" />
-        </div>
-        <div class="container-btn">
-            <button type="button">
-          <img src="./img/btn-logout.png" />
-        </button>
-        </div>
-        <div class="nav">
-            <nav class="nav-container">
-                <div class="icon-container">
-                    <div class="icon">
-                        <a href="./img/btn-home.png"></a>
-                    </div>
-                    <div class="icon">
-                        <a href="./img/btn-calendario.png"></a>
-                    </div>
-                    <div class="icon">
-                        <a href="./img/notificaciones.png"></a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+export const post = () => {
+    //const user = getUser();
+    const div = document.createElement('div');
+    div.classList.add('post-container');
+    const view = `
     <main>
         <div>
             <label for="textarea">Title of the book </label>
@@ -56,13 +27,19 @@
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="rgba(245, 245, 245, 0.9607843137254902)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M12.222 5.828L15.05 3L20 7.95l-2.828 2.828m-4.95-4.95l-5.607 5.607a1 1 0 0 0-.293.707v4.536h4.536a1 1 0 0 0 .707-.293l5.607-5.607m-4.95-4.95l4.95 4.95"/></svg>
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="rgba(245, 245, 245, 0.9607843137254902)" stroke-linejoin="round" stroke-width="1.5" d="M22 8.862a5.95 5.95 0 0 1-1.654 4.13c-2.441 2.531-4.809 5.17-7.34 7.608c-.581.55-1.502.53-2.057-.045l-7.295-7.562c-2.205-2.286-2.205-5.976 0-8.261a5.58 5.58 0 0 1 8.08 0l.266.274l.265-.274A5.612 5.612 0 0 1 16.305 3c1.52 0 2.973.624 4.04 1.732A5.95 5.95 0 0 1 22 8.862Z"/></svg>
         </div>
-    </main>
-    <footer>
-        <p>@Copywrite by Asu, Andre & Paz.</p>
-    </footer>-->
-    <div id="root"></div>
+    </main>`;
 
-    <script type="module" src="main.js"></script>
-</body>
+    /*const divPublication = document.createElement('div');
+    divPublication.classList.add('post-container');*/
+    divPublication.innerHTML = view;
 
-</html>
+    const btnAddPost = divPublication.getElementById('#addPost');
+    btnAddPost.addEventListener('click', (event) => {
+        event.preventDefault();
+        onNavigate('#/post');
+
+    });
+
+    return divPublication;
+
+};

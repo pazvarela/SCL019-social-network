@@ -1,5 +1,5 @@
 import { login } from './views/login.js';
-import { post } from './views/post.js'
+import { Post } from './view/post.js'
 /*import { register } from './views/registerView.js';*/
 
 
@@ -14,7 +14,7 @@ const templateviews = (hash) => {
         case '#/register':
             containerRoot.appendChild(register());
             break;
-        case '#/post':
+        case '#/Post':
             containerRoot.appendChild(post());
             break;
         default:

@@ -1,5 +1,4 @@
 import { login } from './views/login.js';
-import { post } from './views/post.js'
 /*import { register } from './views/registerView.js';*/
 
 
