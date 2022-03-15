@@ -29,8 +29,9 @@ export const post = () => {
 
     /*const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');*/
-    divPublication.innerHTML = view;
     divPublication.appendChild(header());
+    divPublication.innerHTML = view;
+
 
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {

@@ -1,5 +1,6 @@
 import { header } from '../../components/header.js'
 
+
 export const post = () => {
     //const user = getUser();
     const divPublication = document.createElement('div');
@@ -32,7 +33,8 @@ export const post = () => {
     divPublication.innerHTML = view;
     divPublication.appendChild(header());
 
-    const btnAddPost = divPublication.querySelector('#addPost');
+
+    const btnAddPost = divPublication.getElementById('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();
         onNavigate('#/post');

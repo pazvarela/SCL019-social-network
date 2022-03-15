@@ -1,7 +1,9 @@
 import { header } from '../../components/header.js'
 
+
 export const post = () => {
     //const user = getUser();
+
     const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');
     const view = `
@@ -30,7 +32,8 @@ export const post = () => {
     /*const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');*/
     divPublication.innerHTML = view;
-    divPublication.appendChild(header());
+
+
 
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {

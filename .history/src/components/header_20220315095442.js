@@ -26,6 +26,4 @@ export const header = () => {
     </nav>
 </div>
 </header>`
-
-    return createHeader
 }
