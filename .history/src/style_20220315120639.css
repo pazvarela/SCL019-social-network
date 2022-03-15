@@ -44,3 +44,15 @@
     -webkit-box-shadow: 5px 4px 4px 1px rgba(153, 91, 54, 0.36);
     box-shadow: 5px 4px 4px 1px rgba(153, 91, 54, 0.36);
 }
+
+div>.containerHeader {
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    justify-content: space-between;
+}
+
+.container {
+    display: grid;
+    justify-content: left;
+}

@@ -34,9 +34,14 @@ export const Post = () => {
 
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
-        event.preventDefault();
+        event.preventDefault(); <<
+        << << < HEAD
+        onNavigate('#/post'); ===
+        === =
         //onNavigate('#/post');
 
+        >>>
+        >>> > 54e50 c95fc4f21c0ebdc81950d2f91577e278dfa
     });
     return divPublication;
 

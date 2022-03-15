@@ -32,15 +32,6 @@
     border: none;
     background-color: none;
     text-decoration: none;
-    cursor: pointer;
-    /*elimina img fondo*/
-    filter: brightness(1.1);
-    mix-blend-mode: multiply;
-}
-
-.btn-logOut:hover {
-    -webkit-border-radius: 40px 40px 40px 40px;
-    -moz-border-radius: 40px 40px 40px 40px;
-    -webkit-box-shadow: 5px 4px 4px 1px rgba(153, 91, 54, 0.36);
-    box-shadow: 5px 4px 4px 1px rgba(153, 91, 54, 0.36);
+    opacity: 0.6;
+    cursor: not-allowed;
 }
