@@ -1,8 +1,7 @@
-import { header } from './components/header.js'
+import { header } from '../../components/header.js'
 
-header()
 
-export const post = () => {
+export const Post = () => {
     //const user = getUser();
     const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');
@@ -35,10 +34,10 @@ export const post = () => {
     divPublication.appendChild(header());
     console.log(view);
 
-    const btnAddPost = divPublication.getElementById('#addPost');
+    const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();
-        onNavigate('#/post');
+        //onNavigate('#/post');
 
     });
     console.log(divPublication);

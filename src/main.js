@@ -1,7 +1,7 @@
-import { myFunction } from './lib/index.js';
+//import { myFunction } from './lib/index.js';
 // Este es el punto de entrada de tu aplicacion
 import { changeRouter } from './routers/router.js';
-import { login } from './views/login.js';
+//import { login } from './views/login.js';
 
 // Con esta función le agregamos la nueva url: '#/' al comenzar la página.
 const init = () => {
@@ -9,4 +9,3 @@ const init = () => {
 };
 // Al terminar de cargar la página(Event Load) se ejecuta la función INIT.
 window.addEventListener('load', init);
-init();
