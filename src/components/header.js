@@ -27,5 +27,9 @@ export const header = () => {
 </div>
 </header>`
 
+<<<<<<< HEAD
     return createHeader
+=======
+return createHeader
+>>>>>>> 54e50c95fc4f21c0ebdc81950d2f91577e278dfa
 }

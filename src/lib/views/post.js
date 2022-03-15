@@ -1,6 +1,10 @@
 import { header } from '../../components/header.js'
+<<<<<<< HEAD
+=======
 
-export const post = () => {
+>>>>>>> 54e50c95fc4f21c0ebdc81950d2f91577e278dfa
+
+export const Post = () => {
     //const user = getUser();
     const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');
@@ -35,7 +39,12 @@ export const post = () => {
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();
+<<<<<<< HEAD
         onNavigate('#/post');
+=======
+        //onNavigate('#/post');
+
+>>>>>>> 54e50c95fc4f21c0ebdc81950d2f91577e278dfa
     });
     return divPublication;
 
