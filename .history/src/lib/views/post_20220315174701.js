@@ -1,10 +1,10 @@
 import { header } from '../../components/header.js'
-import { nav } from '../../components/nav.js';
 
 export const Post = () => {
     //const user = getUser();
     const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');
+    divPublication.appendChild(header());
     const view = `
     <main>
         <div id='addElement'>
@@ -29,11 +29,11 @@ export const Post = () => {
         </div>
     </main>`;
 
+    /*const divPublication = document.createElement('div');
+    divPublication.classList.add('post-container');*/
     divPublication.innerHTML = view;
-    divPublication.appendChild(header());
-    divPublication.appendChild(nav());
 
-    //btn addPost
+
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();

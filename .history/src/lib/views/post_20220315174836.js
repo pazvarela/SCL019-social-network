@@ -1,5 +1,4 @@
 import { header } from '../../components/header.js'
-import { nav } from '../../components/nav.js';
 
 export const Post = () => {
     //const user = getUser();
@@ -31,7 +30,6 @@ export const Post = () => {
 
     divPublication.innerHTML = view;
     divPublication.appendChild(header());
-    divPublication.appendChild(nav());
 
     //btn addPost
     const btnAddPost = divPublication.querySelector('#addPost');

@@ -1,5 +1,4 @@
 import { header } from '../../components/header.js'
-import { nav } from '../../components/nav.js';
 
 export const Post = () => {
     //const user = getUser();
@@ -28,10 +27,8 @@ export const Post = () => {
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="rgba(245, 245, 245, 0.9607843137254902)" stroke-linejoin="round" stroke-width="1.5" d="M22 8.862a5.95 5.95 0 0 1-1.654 4.13c-2.441 2.531-4.809 5.17-7.34 7.608c-.581.55-1.502.53-2.057-.045l-7.295-7.562c-2.205-2.286-2.205-5.976 0-8.261a5.58 5.58 0 0 1 8.08 0l.266.274l.265-.274A5.612 5.612 0 0 1 16.305 3c1.52 0 2.973.624 4.04 1.732A5.95 5.95 0 0 1 22 8.862Z"/></svg>
         </div>
     </main>`;
-
-    divPublication.innerHTML = view;
     divPublication.appendChild(header());
-    divPublication.appendChild(nav());
+    divPublication.innerHTML = view;
 
     //btn addPost
     const btnAddPost = divPublication.querySelector('#addPost');

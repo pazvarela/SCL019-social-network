@@ -1,5 +1,4 @@
 import { header } from '../../components/header.js'
-import { nav } from '../../components/nav.js';
 
 export const Post = () => {
     //const user = getUser();
@@ -11,6 +10,7 @@ export const Post = () => {
             <label for="textarea">Title of the book </label>
             <textarea name="textarea" id="textarea" cols="30" rows="10">Write a comment...</textarea>
              <div class="btn-add">
+             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M12 8v4m0 0v4m0-4h4m-4 0H8"/><circle cx="12" cy="12" r="10"/></g></svg>
                <button type="button" id="addPost" >Add</button>
               </div>
             </div>
@@ -19,8 +19,8 @@ export const Post = () => {
         </div>
         <div id="add-post">
             <button type="button" id="showPost">addpost</button>
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M12 8v4m0 0v4m0-4h4m-4 0H8"/><circle cx="12" cy="12" r="10"/></g></svg>
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm10.618-3L15 2H9L7.382 4H3v2h18V4z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" stroke="rgba(245, 245, 245, 0.9607843137254902)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11v9.4a.6.6 0 0 1-.6.6H5.6a.6.6 0 0 1-.6-.6V11m5 6v-6m4 6v-6m7-4h-5M3 7h5m0 0V3.6a.6.6 0 0 1 .6-.6h6.8a.6.6 0 0 1 .6.6V7M8 7h8"/></svg>
         </div>
         <div>
             <button type="button" id="showText">addtext</button>
@@ -29,11 +29,11 @@ export const Post = () => {
         </div>
     </main>`;
 
+    /*const divPublication = document.createElement('div');
+    divPublication.classList.add('post-container');*/
     divPublication.innerHTML = view;
     divPublication.appendChild(header());
-    divPublication.appendChild(nav());
 
-    //btn addPost
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();

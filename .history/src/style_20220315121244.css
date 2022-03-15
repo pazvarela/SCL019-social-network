@@ -28,13 +28,6 @@
     src: url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Bonheur+Royale&display=swap');
 }
 
-.containerHeader {
-    display: grid;
-    justify-content: space-around;
-    position: relative;
-    z-index: 3;
-}
-
 .btn-logOut {
     border: none;
     background-color: none;
@@ -50,18 +43,4 @@
     -moz-border-radius: 40px 40px 40px 40px;
     -webkit-box-shadow: 5px 4px 4px 1px rgba(153, 91, 54, 0.36);
     box-shadow: 5px 4px 4px 1px rgba(153, 91, 54, 0.36);
-}
-
-#addElement {
-    background-color: #69442D;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 100% auto;
-    z-index: 1;
-}
-
-.container-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }

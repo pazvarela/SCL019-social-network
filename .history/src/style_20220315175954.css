@@ -60,8 +60,7 @@
     z-index: 1;
 }
 
-.container-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.containeNav {
+    display: grid;
+    justify-content: space-between;
 }

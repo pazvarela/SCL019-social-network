@@ -56,12 +56,6 @@
     background-color: #69442D;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 100% auto;
+    grid-template-rows: 2rem auto;
     z-index: 1;
-}
-
-.container-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
