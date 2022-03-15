@@ -5,8 +5,8 @@ header()
 export const post = () => {
     //const user = getUser();
     const addElement = document.getElementById('addElement')
-    const divPublication = document.createElement('div');
-    divPublication.classList.add('post-container');
+    const div = document.createElement('div');
+    div.classList.add('post-container');
     const view = `
     <main>
         <div id='addElement'>
@@ -32,8 +32,7 @@ export const post = () => {
 
     /*const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');*/
-    divPublication.innerHTML = view;
-    divPublication.appendChild(header());
+    div.innerHTML = view;
     console.log(view);
 
     const btnAddPost = divPublication.getElementById('#addPost');
@@ -42,8 +41,7 @@ export const post = () => {
         onNavigate('#/post');
 
     });
-    console.log(divPublication);
-    return divPublication;
 
+    return divPublication;
 
 };

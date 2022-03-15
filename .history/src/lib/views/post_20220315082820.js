@@ -33,7 +33,7 @@ export const post = () => {
     /*const divPublication = document.createElement('div');
     divPublication.classList.add('post-container');*/
     divPublication.innerHTML = view;
-    divPublication.appendChild(header());
+    divPublication.appendChild(header())
     console.log(view);
 
     const btnAddPost = divPublication.getElementById('#addPost');
