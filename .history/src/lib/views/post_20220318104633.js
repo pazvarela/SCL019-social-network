@@ -1,7 +1,6 @@
 import { header } from '../../components/header.js'
 import { nav } from '../../components/nav.js';
-//import db from '../../firebase/firebaseConfig.js'
-//import { createPost } from '../../firebase/firebaseConfig.js'
+import db from '../../firebase/firebaseConfig.js'
 
 export const Post = () => {
     //const user = getUser();
@@ -39,17 +38,11 @@ export const Post = () => {
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();
-        /*const publication = divPublication.querySelector('#textarea').value;
-        console.log(publication);
-        createPost(Post).then((docRef) => {
-            console.log('esperoemos que muestre algo', docRef.id)
-            document.getElementById('textarea').value = '';
-        })
+        //onNavigate('#/post');
 
-    });*/
-        window.location.hash = '#/post';
-        return divPublication;
+    });
+    window.location.hash = '#/post';
+    return divPublication;
 
 
-    })
 };

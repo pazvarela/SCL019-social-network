@@ -39,17 +39,14 @@ export const Post = () => {
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();
-        /*const publication = divPublication.querySelector('#textarea').value;
+        const publication = divPublication.querySelector('#textarea').value;
         console.log(publication);
-        createPost(Post).then((docRef) => {
-            console.log('esperoemos que muestre algo', docRef.id)
-            document.getElementById('textarea').value = '';
-        })
-
-    });*/
-        window.location.hash = '#/post';
-        return divPublication;
 
 
-    })
+
+    });
+    window.location.hash = '#/post';
+    return divPublication;
+
+
 };

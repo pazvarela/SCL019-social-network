@@ -4,7 +4,7 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore } from 'firebase/firestore';
+//import { getFirestore } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,6 +34,4 @@ export default db;
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 
 export const createPost = (Post) => db.collection('publicationPost').add({ Post });
-console.log(Post)
-
-//
+console.log(createPost)

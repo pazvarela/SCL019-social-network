@@ -24,16 +24,6 @@ const app = initializeApp(firebaseConfig);
 // dentro de db se accede a firestore
 // para poder acceder a la variable se exporta
 //dentro de const db se tiene acceso a firestore
-//const db = getFirestore(app);
-const db = firebase.firestore();
+const db = getFirestore(app);
 
 export default db;
-
-// implementacion de firebase en archivo post
-
-//CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
-
-export const createPost = (Post) => db.collection('publicationPost').add({ Post });
-console.log(Post)
-
-//

@@ -33,7 +33,4 @@ export default db;
 
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 
-export const createPost = (Post) => db.collection('publicationPost').add({ Post });
-console.log(Post)
-
-//
+export const createPost = (Post)
