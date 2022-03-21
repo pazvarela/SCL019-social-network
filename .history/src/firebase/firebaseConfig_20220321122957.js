@@ -31,7 +31,7 @@ const db = getFirestore(app);
 
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 // no resulto XD!
-//ahora si funciona
+
 const createPost = async(newComent) => {
         const docRef = await addDoc(collection(db, "post"), {
             comment: newComent

@@ -38,13 +38,16 @@ export const Post = () => {
 
     //btn addPost
     const btnAddPost = divPublication.querySelector('#addPost');
-    btnAddPost.addEventListener('click', async(event) => {
+    btnAddPost.addEventListener('click', (event) => {
         event.preventDefault();
-        //almacena el comentario
         const publication = divPublication.querySelector('#textarea').value;
         console.log(publication);
+        /*(Post).then((docRef) => {
+            console.log('esperoemos que muestre algo', docRef.id)
+            document.getElementById('textarea').value = '';
+        }*/
         //llamar a createpost
-        await createPost(publication);
+        await createPost();
     });
     //window.location.hash = '#/post';
     return divPublication;

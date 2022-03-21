@@ -1,3 +1,4 @@
+import { async } from 'regenerator-runtime';
 import { header } from '../../components/header.js'
 import { nav } from '../../components/nav.js';
 import { createPost } from '../../firebase/firebaseConfig.js'
@@ -40,11 +41,14 @@ export const Post = () => {
     const btnAddPost = divPublication.querySelector('#addPost');
     btnAddPost.addEventListener('click', async(event) => {
         event.preventDefault();
-        //almacena el comentario
         const publication = divPublication.querySelector('#textarea').value;
         console.log(publication);
+        /*(Post).then((docRef) => {
+            console.log('esperoemos que muestre algo', docRef.id)
+            document.getElementById('textarea').value = '';
+        }*/
         //llamar a createpost
-        await createPost(publication);
+        await createPost();
     });
     //window.location.hash = '#/post';
     return divPublication;

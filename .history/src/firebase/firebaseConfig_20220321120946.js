@@ -5,18 +5,17 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
 import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCiGtmDy7pXtGBhp7DQ-P7kNTGPLcYCT1w",
-    authDomain: "scl019-social-network.firebaseapp.com",
-    projectId: "scl019-social-network",
-    storageBucket: "scl019-social-network.appspot.com",
-    messagingSenderId: "688901907009",
-    appId: "1:688901907009:web:17e9dc19d24585836f9cc0"
+    apiKey: process.env.PROYECT_APP_FIREBASE_APIKEY,
+    authDomain: process.env.PROYECT_APP_FIREBASE_AUTHDOMAIN,
+    projectId: process.env.PROYECT_APP_FIREBASE_PROJECTID,
+    storageBucket: process.env.PROYECT_APP_FIREBASE_STORAGEBUCKET,
+    messagingSenderId: process.env.PROYECT_APP_FIREBASE_MESSAGINGSENDERID,
+    appId: process.env.PROYECT_APP_FIREBASE_APPID,
 };
 
 // Initialize Firebase
@@ -27,18 +26,22 @@ const app = initializeApp(firebaseConfig);
 //dentro de const db se tiene acceso a firestore
 const db = getFirestore(app);
 
+
+export default db;
+
 // implementacion de firebase en archivo post
 
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 // no resulto XD!
-//ahora si funciona
-const createPost = async(newComent) => {
+
+export const createPost = () => {
         const docRef = await addDoc(collection(db, "post"), {
-            comment: newComent
+            name: "Tokyo",
+            country: "Japan"
         });
         console.log("Document written with ID: ", docRef.id);
     }
     // Add a new document with a generated id.
-export { createPost };
+
 
 //
