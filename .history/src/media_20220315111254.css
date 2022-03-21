@@ -1,0 +1,9 @@
+@media (min-width: 340px) {
+    .post-container {
+        grid-column: 5 / 6;
+        grid-row: 2 / 3;
+    }
+    .container-btn {
+        background-image: none;
+    }
+}
