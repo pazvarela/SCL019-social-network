@@ -39,10 +39,18 @@ divPublication.appendChild(nav());
 const btnAddPost = divPublication.querySelector('#addPost');
 btnAddPost.addEventListener('click', (event) => {
     event.preventDefault();
-
+    //funcion para que se muestre comentario muro
+    /*const publication = divPublication.querySelector('#textarea').value;
+    console.log(publication);
+    createPost(Post).then((docRef) => {
+        console.log('esperoemos que muestre algo', docRef.id)
+        document.getElementById('textarea').value = '';
+    })*/
 
 });
 //window.location.hash = '#/post';
 return divPublication;
+
+
 })
 };

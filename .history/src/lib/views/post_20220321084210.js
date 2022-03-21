@@ -4,10 +4,10 @@ import { nav } from '../../components/nav.js';
 //import { createPost } from '../../firebase/firebaseConfig.js'
 
 export const Post = () => {
-//const user = getUser();
-const divPublication = document.createElement('div');
-divPublication.classList.add('post-container');
-const view = `
+        //const user = getUser();
+        const divPublication = document.createElement('div');
+        divPublication.classList.add('post-container');
+        const view = `
     <main>
         <div id='addElement'>
             <label for="textarea">Title of the book </label>
@@ -31,18 +31,26 @@ const view = `
         </div>*/
     </main>`;
 
-divPublication.innerHTML = view;
-divPublication.appendChild(header());
-divPublication.appendChild(nav());
+        divPublication.innerHTML = view;
+        divPublication.appendChild(header());
+        divPublication.appendChild(nav());
 
-//btn addPost
-const btnAddPost = divPublication.querySelector('#addPost');
-btnAddPost.addEventListener('click', (event) => {
-    event.preventDefault();
-
+        //btn addPost
+        const btnAddPost = divPublication.querySelector('#addPost');
+        btnAddPost.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    //funcion para que se muestre comentario muro
+                    /*const publication = divPublication.querySelector('#textarea').value;
+    console.log(publication);
+    createPost(Post).then((docRef) => {
+        console.log('esperoemos que muestre algo', docRef.id)
+        document.getElementById('textarea').value = '';
+    })
 
 });
 //window.location.hash = '#/post';
 return divPublication;
+
+
 })
 };

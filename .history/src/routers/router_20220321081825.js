@@ -41,6 +41,7 @@ export const changeRouter = (hash) => {
 };
 
 // Cambia página frente a cambio de #
+
 window.addEventListener('hashchange', () => {
     changeRouter(window.location.hash);
 });

@@ -41,7 +41,7 @@
     "node": ">=14"
   },
   "dependencies": {
-    "firebase": "^9.6.6",
+    "firebase": "^9.6.9",
     "html-webpack-plugin": "^5.5.0"
   }
 }
