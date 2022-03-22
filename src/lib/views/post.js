@@ -1,9 +1,9 @@
 import { header } from "../../components/header.js";
 import { nav } from "../../components/nav.js";
-import { createPost } from "../../firebase/firebaseConfig.js";
+import { createPost, getAllPost } from "../../firebase/firebaseConfig.js";
 //import db from '../../firebase/firebaseConfig.js'
 
-export const Post = () => {
+export const  Post = async () => {
   //const user = getUser();
   const divPublication = document.createElement("div");
   divPublication.classList.add("post-container");
@@ -45,12 +45,8 @@ export const Post = () => {
     //llamar a createpost
     await createPost(publication);
   });
-
-  const allpost = await getDocs(collection(db, "post"));
-  allpost.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-    console.log(doc.id, " => ", doc.data());
-  });
+  await getAllPost()
+  
   //window.location.hash = '#/post';
   return divPublication;
 };
