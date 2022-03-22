@@ -44,8 +44,4 @@ export const changeRouter = (hash) => {
 window.addEventListener('hashchange', () => {
     changeRouter(window.location.hash);
 });
-<<<<<<< HEAD
 //false estado por defecto
-=======
-//false estado por defecto
->>>>>>> e2f8fd1e374206f3da46fdd980add6f4eb768882
