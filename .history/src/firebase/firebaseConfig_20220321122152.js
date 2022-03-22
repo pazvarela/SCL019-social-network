@@ -11,12 +11,12 @@ import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/fireba
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCiGtmDy7pXtGBhp7DQ-P7kNTGPLcYCT1w",
-    authDomain: "scl019-social-network.firebaseapp.com",
-    projectId: "scl019-social-network",
-    storageBucket: "scl019-social-network.appspot.com",
-    messagingSenderId: "688901907009",
-    appId: "1:688901907009:web:17e9dc19d24585836f9cc0"
+    apiKey: process.env.PROYECT_APP_FIREBASE_APIKEY,
+    authDomain: process.env.PROYECT_APP_FIREBASE_AUTHDOMAIN,
+    projectId: process.env.PROYECT_APP_FIREBASE_PROJECTID,
+    storageBucket: process.env.PROYECT_APP_FIREBASE_STORAGEBUCKET,
+    messagingSenderId: process.env.PROYECT_APP_FIREBASE_MESSAGINGSENDERID,
+    appId: process.env.PROYECT_APP_FIREBASE_APPID,
 };
 
 // Initialize Firebase
@@ -31,10 +31,10 @@ const db = getFirestore(app);
 
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 // no resulto XD!
-//ahora si funciona
-const createPost = async(newComent) => {
+
+const createPost = async() => {
         const docRef = await addDoc(collection(db, "post"), {
-            comment: newComent
+            comment: 'crea elemento'
         });
         console.log("Document written with ID: ", docRef.id);
     }

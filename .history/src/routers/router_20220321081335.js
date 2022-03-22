@@ -15,7 +15,7 @@ const templateviews = (hash) => {
         case '#/register':
             containerRoot.appendChild(register());
             break;*/
-        case '#/post':
+        case '/#post':
             containerRoot.appendChild(Post());
             break;
         default:
@@ -34,18 +34,15 @@ export const changeRouter = (hash) => {
     if (hash === '#/register') {
         return templateviews(hash);
     }
-    if (hash === '#/post') {
+    if (hash === '/#/post') {
         return templateviews(hash);
     }
     return templateviews(hash);
 };
 
 // Cambia página frente a cambio de #
+
 window.addEventListener('hashchange', () => {
     changeRouter(window.location.hash);
 });
-<<<<<<< HEAD
 //false estado por defecto
-=======
-//false estado por defecto
->>>>>>> e2f8fd1e374206f3da46fdd980add6f4eb768882

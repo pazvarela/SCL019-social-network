@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 // Import the functions you need from the SDKs you need
 // funcion que inicaliza la aplicación
-import { initializeApp } from 'firebase/app';
+//import { initializeApp } from 'firebase/app';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +23,23 @@ const app = initializeApp(firebaseConfig);
 // se rea una const db (data base) y se llama a getFirestore y dentro se pasa la app (aplication)
 // dentro de db se accede a firestore
 // para poder acceder a la variable se exporta
-const db = getFirestore(app);
+//dentro de const db se tiene acceso a firestore
+//const db = getFirestore(app);
+const db = firebase.firestore();
 
 export default db;
+
+// implementacion de firebase en archivo post
+
+//CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
+// no resulto XD!
+
+
+// Add a new document with a generated id.
+const docRef = await addDoc(collection(db, "cities"), {
+    name: "Tokyo",
+    country: "Japan"
+});
+console.log("Document written with ID: ", docRef.id);
+
+//
