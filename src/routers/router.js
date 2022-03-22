@@ -1,9 +1,5 @@
 //import { login } from '../lib/views/login.ls';
-<<<<<<< HEAD
-import { post } from '../lib/views/post.js'
-=======
 import { Post } from '../lib/views/post.js'
->>>>>>> d66233d8039aff43e1307ced3ed9affb60706ad3
 /*import { register } from './views/registerView.js';*/
 
 
@@ -49,8 +45,4 @@ export const changeRouter = (hash) => {
 window.addEventListener('hashchange', () => {
     changeRouter(window.location.hash);
 });
-<<<<<<< HEAD
 //false estado por defecto
-=======
-//false estado por defecto
->>>>>>> d66233d8039aff43e1307ced3ed9affb60706ad3
