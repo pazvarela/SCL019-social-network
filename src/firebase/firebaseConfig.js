@@ -4,7 +4,8 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -39,6 +40,16 @@ const createPost = async(newComent) => {
         console.log("Document written with ID: ", docRef.id);
     }
     // Add a new document with a generated id.
-export { createPost };
+
+const getAllPost = async () => {
+
+    const allpost = await getDocs(collection(db, "post"));
+  allpost.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+  });
+}
+
+export { getAllPost, createPost };
 
 //
