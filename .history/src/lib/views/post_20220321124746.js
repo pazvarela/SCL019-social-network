@@ -43,7 +43,7 @@ export const Post = () => {
         //almacena el comentario
         const publication = divPublication.querySelector('#textarea').value;
         console.log(publication);
-        document.querySelector('#textarea').value = '';
+        document.getElementById('#textarea').value = '';
         //llamar a createpost
         await createPost(publication);
     });

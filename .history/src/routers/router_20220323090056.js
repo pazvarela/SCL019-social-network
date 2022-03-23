@@ -16,7 +16,7 @@ const templateviews = (hash) => {
             containerRoot.appendChild(register());
             break;*/
         case '#/post':
-            containerRoot.appendChild(await (Post()));
+            containerRoot.appendChild(await Post());
             break;
         default:
             containerRoot.innerHTML = 'ERROR 404';
