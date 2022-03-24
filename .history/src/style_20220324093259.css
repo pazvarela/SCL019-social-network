@@ -16,7 +16,6 @@
                 --chocolate-color: #995b36;
                 --brown-light-color: #dec6af;
                 --white-brown-color: #f5f5f5;
-                --opacity-bg-post: rgba(105, 68, 45, 0.7);
                 --background-gradiant-desktop: linear-gradient( 0deg, rgba(222, 198, 175, 0.8) 0%, rgba(105, 68, 45, 1) 70%);
                 --background-gradient-mobil-color: linear-gradient( 90deg, rgba(222, 198, 175, 1) 80%, rgba(105, 68, 45, 1) 100%);
             }
@@ -51,14 +50,11 @@
                 margin: 0.5rem;
                 z-index: 1;
             }
-            /*ESTILOS LABEL TITLE y DESCRIPTION*/
+            /*ESTILOS LABEL TITLE*/
             
-            .textTitle,
-            .descrpTitle,
-            .textarea {
+            .textTitle {
                 font-family: "Baloo 2", cursive;
-                font-weight: 400;
-                font-size: 1.5rem;
+                font-weight: 700;
             }
             /*INPUT TITLE*/
             
@@ -68,16 +64,6 @@
                 outline: none;
                 background-color: #dec6af;
                 padding: 0.3rem;
-            }
-            /*ESTILO TEXTAREA*/
-            
-            .textarea {
-                border-radius: 1rem;
-                border: 0;
-                outline: none;
-                background-color: #dec6af;
-                padding: 0.3rem;
-                margin-bottom: 0.5rem;
             }
             /*ESTILOS BTN ADD POST*/
             
