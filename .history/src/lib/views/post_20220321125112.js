@@ -1,13 +1,14 @@
-import { header } from "../../components/header.js";
-import { nav } from "../../components/nav.js";
-import { createPost, getAllPost } from "../../firebase/firebaseConfig.js";
+import { header } from '../../components/header.js'
+import { nav } from '../../components/nav.js';
+import { createPost } from '../../firebase/firebaseConfig.js'
 //import db from '../../firebase/firebaseConfig.js'
 
-export const  Post = async () => {
-  //const user = getUser();
-  const divPublication = document.createElement("div");
-  divPublication.classList.add("post-container");
-  const view = `
+
+export const Post = () => {
+    //const user = getUser();
+    const divPublication = document.createElement('div');
+    divPublication.classList.add('post-container');
+    const view = `
     <main>
         <div id='addElement'>
             <label for="textarea">Title of the book </label>
@@ -35,18 +36,17 @@ export const  Post = async () => {
     divPublication.appendChild(header());
     divPublication.appendChild(nav());
 
-  //btn addPost
-  const btnAddPost = divPublication.querySelector("#addPost");
-  btnAddPost.addEventListener("click", async (event) => {
-    event.preventDefault();
-    //almacena el comentario
-    const publication = divPublication.querySelector("#textarea").value;
-    console.log(publication);
-    //llamar a createpost
-    await createPost(publication);
-  });
-  await getAllPost()
-  
-  //window.location.hash = '#/post';
-  return divPublication;
+    //btn addPost
+    const btnAddPost = divPublication.querySelector('#addPost');
+    btnAddPost.addEventListener('click', async(event) => {
+        event.preventDefault();
+        //almacena el comentario
+        const publication = divPublication.querySelector('#textarea').value;
+        console.log(publication);
+        document.querySelector('#textarea').value = '';
+        //llamar a createpost
+        await createPost(publication);
+    });
+    //window.location.hash = '#/post';
+    return divPublication;
 };
