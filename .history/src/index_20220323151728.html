@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- load all Font Awesome styles + include all v5 backwards compatibility by default -->
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <title>BarterBook</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div class="postComent">
+        <h3 class="titlePost">${dataPost.titlePost}</h3>
+        <i>aca va un icono</i>
+        <textarea name="coment" id="coment" cols="30" rows="10" class="coment" readonly></textarea>
+        <div><input class="counter" id="counter" type="number" value="0" name="" readonly /></div>
+
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: 0;
+        }
+        /*body {
+    background-image: url('./img/backgroundbb.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}*/
+        
+         :root {
+            --black-color: #000000;
+            --brown-dark-color: #69442d;
+            --chocolate-color: #995b36;
+            --brown-light-color: #dec6af;
+            --white-brown-color: #f5f5f5;
+            --background-gradiant-desktop: linear-gradient( 0deg, rgba(222, 198, 175, 0.8) 0%, rgba(105, 68, 45, 1) 70%);
+            --background-gradient-mobil-color: linear-gradient( 90deg, rgba(222, 198, 175, 1) 80%, rgba(105, 68, 45, 1) 100%);
+        }
+        
+        @font-face {
+            font-family: "Baloo 2", cursive;
+            font-family: "Bonheur Royale", cursive;
+            src: url("https://fonts.googleapis.com/css2?family=Baloo+2&family=Bonheur+Royale&display=swap");
+        }
+        
+        #root {
+            display: grid;
+            column-gap: 1rem;
+            grid-template-rows: (2rem, 2fr);
+            justify-content: center;
+            align-items: center;
+            background-color: #69442d;
+        }
+        
+        header {
+            display: grid;
+            grid-template-rows: 100%;
+            text-align: center;
+            z-index: 3;
+        }
+        
+        .formPost {
+            color: red;
+        }
