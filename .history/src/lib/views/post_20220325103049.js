@@ -61,18 +61,18 @@ const getAllPost = async() => {
 
         const allpost = await getDocs(collection(db, "post"));
         allpost.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            //console.log(doc.id, " => ", doc.data());
+                    // doc.data() is never undefined for query doc snapshots
+                    //console.log(doc.id, " => ", doc.data());
 
-            const containerPost = divPublication.querySelector('#containerPostAdd')
-            const timer = query(collection(db, "post"), orderBy("date", "desc"))
+                    const containerPost = divPublication.querySelector('#containerPostAdd')
+                    const timer = query(collection(db, "post"), orderBy("date", "desc"))
 
-            onSnapshot(timer, (querySnapshot) => {
-                let html = ''
+                    onSnapshot(timer, (querySnapshot) => {
+                            let html = ''
 
-                querySnapshot.forEach(doc => {
-                        const commentPost = doc.data();
-                        html += `
+                            querySnapshot.forEach(doc => {
+                                    const commentPost = doc.data();
+                                    html += `
         <div> 
           <h3 class="titlePost">${commentPost.title}</h3>
           <textarea class="commentDone" readonly>${commentPost.description}</textarea>
@@ -87,12 +87,11 @@ const getAllPost = async() => {
                 Edit</button>
           </div> 
         </div>`
-                    }
-                }
-            });
-            //await getAllPost()
-            //window.location.hash = '#/post';
-            return divPublication;
+                                }
+                            });
+                        //await getAllPost()
+                        //window.location.hash = '#/post';
+                        return divPublication;
 
 
-        });
+                    });

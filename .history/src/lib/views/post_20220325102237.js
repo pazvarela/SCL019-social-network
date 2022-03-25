@@ -7,11 +7,11 @@ import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs
 //import db from '../../firebase/firebaseConfig.js'
 
 export const Post = async() => {
-        //const user = getUser();
-        const headerPost = document.createElement("header");
-        const divPublication = document.createElement("div");
-        divPublication.classList.add("post-container");
-        const view = `
+//const user = getUser();
+const headerPost = document.createElement("header");
+const divPublication = document.createElement("div");
+divPublication.classList.add("post-container");
+const view = `
     <main>
         <div id='addElement'>
         <form id="formPost" class="formPost">
@@ -30,21 +30,21 @@ export const Post = async() => {
         <p></p>
      </div>
     </main>`;
-        headerPost.innerHTML = nav();
-        headerPost.innerHTML = header();
-        divPublication.innerHTML = view;
-    }
-    //let id = '';
-    //btn addPost
-    /* const btnAddPost = divPublication.querySelector("#addPost");
-       btnAddPost.addEventListener("click", async(event) => {
-           event.preventDefault();
-           //almacena el comentario
-           const publication = divPublication.querySelector("#textarea").value;
-           console.log(publication);
-           //llamar a createpost
-           await createPost(publication);
-    });*/
+headerPost.innerHTML = nav();
+headerPost.innerHTML = header();
+divPublication.innerHTML = view;
+
+//let id = '';
+//btn addPost
+/* const btnAddPost = divPublication.querySelector("#addPost");
+   btnAddPost.addEventListener("click", async(event) => {
+       event.preventDefault();
+       //almacena el comentario
+       const publication = divPublication.querySelector("#textarea").value;
+       console.log(publication);
+       //llamar a createpost
+       await createPost(publication);*/
+});
 
 //btn addPost
 const btnAddPost = divPublication.querySelector("#addPost");
@@ -68,11 +68,11 @@ const getAllPost = async() => {
             const timer = query(collection(db, "post"), orderBy("date", "desc"))
 
             onSnapshot(timer, (querySnapshot) => {
-                let html = ''
+                    let html = ''
 
-                querySnapshot.forEach(doc => {
-                        const commentPost = doc.data();
-                        html += `
+                    querySnapshot.forEach(doc => {
+                            const commentPost = doc.data();
+                            html += `
         <div> 
           <h3 class="titlePost">${commentPost.title}</h3>
           <textarea class="commentDone" readonly>${commentPost.description}</textarea>
@@ -87,12 +87,13 @@ const getAllPost = async() => {
                 Edit</button>
           </div> 
         </div>`
-                    }
-                }
-            });
+                        }
+
+                    });
+
+            }
+
             //await getAllPost()
             //window.location.hash = '#/post';
             return divPublication;
-
-
         });

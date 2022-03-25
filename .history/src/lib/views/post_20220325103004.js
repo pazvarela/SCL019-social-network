@@ -68,11 +68,11 @@ const getAllPost = async() => {
             const timer = query(collection(db, "post"), orderBy("date", "desc"))
 
             onSnapshot(timer, (querySnapshot) => {
-                let html = ''
+                    let html = ''
 
-                querySnapshot.forEach(doc => {
-                        const commentPost = doc.data();
-                        html += `
+                    querySnapshot.forEach(doc => {
+                            const commentPost = doc.data();
+                            html += `
         <div> 
           <h3 class="titlePost">${commentPost.title}</h3>
           <textarea class="commentDone" readonly>${commentPost.description}</textarea>
@@ -87,12 +87,13 @@ const getAllPost = async() => {
                 Edit</button>
           </div> 
         </div>`
-                    }
-                }
-            });
-            //await getAllPost()
-            //window.location.hash = '#/post';
-            return divPublication;
+                        }
 
+
+                    });
+                //await getAllPost()
+                //window.location.hash = '#/post';
+                return divPublication;
+            }
 
         });
