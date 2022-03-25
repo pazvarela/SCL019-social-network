@@ -89,14 +89,7 @@
             
             #addPost:hover {
                 cursor: pointer;
-                color: rgba(255, 255, 255, 1) !important;
-                box-shadow: 0 0.25rem 0.4rem #dec6af;
-                transition: all 0.2s ease;
-            }
-            
-            .fa-circle-plus::before {
-                padding: auto;
-                border-radius: none;
+                color: #000000;
             }
             
             #addPost {

@@ -94,11 +94,6 @@
                 transition: all 0.2s ease;
             }
             
-            .fa-circle-plus::before {
-                padding: auto;
-                border-radius: none;
-            }
-            
             #addPost {
                 text-decoration: none;
                 font-family: "Baloo 2", cursive;

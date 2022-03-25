@@ -5,7 +5,6 @@ import { createPost, getAllPost } from "../../firebase/firebaseConfig.js";
 
 export const Post = async() => {
     //const user = getUser();
-    const headerPost = document.createElement("header");
     const divPublication = document.createElement("div");
     divPublication.classList.add("post-container");
     const view = `
@@ -18,7 +17,7 @@ export const Post = async() => {
             <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
             <textarea name="textarea" id="textarea" class="textarea" cols="30" rows="10">Write a comment...</textarea>
              <div class="btn-addPost">
-               <button type="button" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
+               <button type="button" id="addPost" class="btn-add" >Add</button>
               </div>
             </div>
         <div class="containerPostAdd" id="containerPostAdd"></div>
@@ -27,21 +26,22 @@ export const Post = async() => {
         <p></p>
      </div>
     </main>`;
-    headerPost.innerHTML = nav();
-    headerPost.innerHTML = header();
-    divPublication.innerHTML = view;
 
+
+    divPublication.appendChild(header());
+    divPublication.appendChild(nav());
+    divPublication.innerHTML = view;
     //let id = '';
     //btn addPost
-    /* const btnAddPost = divPublication.querySelector("#addPost");
-       btnAddPost.addEventListener("click", async(event) => {
-           event.preventDefault();
-           //almacena el comentario
-           const publication = divPublication.querySelector("#textarea").value;
-           console.log(publication);
-           //llamar a createpost
-           await createPost(publication);
-       });*/
+    const btnAddPost = divPublication.querySelector("#addPost");
+    btnAddPost.addEventListener("click", async(event) => {
+        event.preventDefault();
+        //almacena el comentario
+        const publication = divPublication.querySelector("#textarea").value;
+        console.log(publication);
+        //llamar a createpost
+        await createPost(publication);
+    });
 
     //fUNCION PARA MOSTRAR POST EN TIEMPO REAL
     /*const containerPost = divPublication.querySelector("#containerPostAdd")

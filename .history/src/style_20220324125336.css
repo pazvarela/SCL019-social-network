@@ -95,8 +95,7 @@
             }
             
             .fa-circle-plus::before {
-                padding: auto;
-                border-radius: none;
+                background-color: #995b36;
             }
             
             #addPost {

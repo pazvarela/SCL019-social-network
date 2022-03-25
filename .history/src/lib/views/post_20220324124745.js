@@ -18,7 +18,7 @@ export const Post = async() => {
             <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
             <textarea name="textarea" id="textarea" class="textarea" cols="30" rows="10">Write a comment...</textarea>
              <div class="btn-addPost">
-               <button type="button" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
+               <button type="button" id="addPost" class="btn-add" <i class="fa-solid fa-circle-plus"></i>>Add</button>
               </div>
             </div>
         <div class="containerPostAdd" id="containerPostAdd"></div>

@@ -96,7 +96,6 @@
             
             .fa-circle-plus::before {
                 padding: auto;
-                border-radius: none;
             }
             
             #addPost {
