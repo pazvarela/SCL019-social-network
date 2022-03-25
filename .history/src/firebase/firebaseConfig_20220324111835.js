@@ -47,8 +47,12 @@ const getAllPost = async() => {
     allpost.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
+        const task = doc.data();
+
+
     });
 }
 
-//export { getAllPost, createPost };
-export { createPost};
+export { getAllPost, createPost };
+
+//

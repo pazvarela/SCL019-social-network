@@ -50,5 +50,6 @@ const getAllPost = async() => {
     });
 }
 
-//export { getAllPost, createPost };
-export { createPost};
+export { getAllPost, createPost };
+
+//
