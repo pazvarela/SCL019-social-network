@@ -51,6 +51,5 @@ const createPost = async(newComent, title) => {
   });
 } */
 
-export { getAllPost, createPost };
-
-//
+//export { getAllPost, createPost };
+export { createPost};
