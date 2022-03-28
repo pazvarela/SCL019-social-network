@@ -1,5 +1,5 @@
 //import { login } from '../lib/views/login.ls';
-import { Post } from '../lib/views/post.js'
+import { Post } from '../lib/views/wall.js'
 //import { register } from './views/registerView.js';/
 
 
