@@ -6,8 +6,8 @@ import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs
 
 //import db from '../../firebase/firebaseConfig.js'
 
-export const Post = () => {
-    //window.location.hash = '#/post';
+export const Post = async() => {
+    window.location.hash = '#/post';
     //const user = getUser();
     const headerPost = document.createElement("header");
     const divPublication = document.createElement("div");
@@ -31,24 +31,36 @@ export const Post = () => {
         <p></p>
      </div>
     </main>`;
-    headerPost.appendChild(header());
-    headerPost.appendChild(nav());
-    divPublication.appendChild(headerPost)
-    divPublication.innerHTML += view; //concatenar header, nav con view
+    headerPost.innerHTML = nav();
+    headerPost.innerHTML = header();
+    divPublication.innerHTML = view;
 
-    //let id = '';
-    //btn addPost
-    const btnAddPost = divPublication.querySelector("#addPost");
-    btnAddPost.addEventListener("click", async(event) => {
-        event.preventDefault();
-        //almacena el comentario
-        const publication = divPublication.querySelector("#textarea").value;
-        console.log(publication);
-        //llamar a createpost
-        await createPost(publication);
-    });
+}
 
-    /*const getAllPost = async() => {
+//let id = '';
+//btn addPost
+/* const btnAddPost = divPublication.querySelector("#addPost");
+   btnAddPost.addEventListener("click", async(event) => {
+       event.preventDefault();
+       //almacena el comentario
+       const publication = divPublication.querySelector("#textarea").value;
+       console.log(publication);
+       //llamar a createpost
+       await createPost(publication);
+});*/
+
+//btn addPost
+const btnAddPost = divPublication.querySelector("#addPost");
+btnAddPost.addEventListener("click", async(event) => {
+    event.preventDefault();
+    //almacena el comentario
+    const publication = divPublication.querySelector("#textarea").value;
+    console.log(publication);
+    //llamar a createpost
+    await createPost(publication);
+});
+
+const getAllPost = async() => {
 
     const allpost = await getDocs(collection(db, "post"));
     allpost.forEach((doc) => {
@@ -81,9 +93,9 @@ export const Post = () => {
             })
         })
     });
-    
+    return divPublication;
+    //await getAllPost()
     //window.location.hash = '#/post';
 
-}*/
-    return divPublication;
+
 };

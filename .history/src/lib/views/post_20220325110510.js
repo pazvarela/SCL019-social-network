@@ -6,13 +6,12 @@ import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs
 
 //import db from '../../firebase/firebaseConfig.js'
 
-export const Post = () => {
-    //window.location.hash = '#/post';
-    //const user = getUser();
-    const headerPost = document.createElement("header");
-    const divPublication = document.createElement("div");
-    divPublication.classList.add("post-container");
-    const view = `
+export const Post = async() => {
+        //const user = getUser();
+        const headerPost = document.createElement("header");
+        const divPublication = document.createElement("div");
+        divPublication.classList.add("post-container");
+        const view = `
     <main>
         <div id='addElement'>
         <form id="formPost" class="formPost">
@@ -31,39 +30,49 @@ export const Post = () => {
         <p></p>
      </div>
     </main>`;
-    headerPost.appendChild(header());
-    headerPost.appendChild(nav());
-    divPublication.appendChild(headerPost)
-    divPublication.innerHTML += view; //concatenar header, nav con view
-
+        headerPost.innerHTML = nav();
+        headerPost.innerHTML = header();
+        divPublication.innerHTML = view;
+    }
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#addPost");
-    btnAddPost.addEventListener("click", async(event) => {
-        event.preventDefault();
-        //almacena el comentario
-        const publication = divPublication.querySelector("#textarea").value;
-        console.log(publication);
-        //llamar a createpost
-        await createPost(publication);
-    });
+    /* const btnAddPost = divPublication.querySelector("#addPost");
+       btnAddPost.addEventListener("click", async(event) => {
+           event.preventDefault();
+           //almacena el comentario
+           const publication = divPublication.querySelector("#textarea").value;
+           console.log(publication);
+           //llamar a createpost
+           await createPost(publication);
+    });*/
 
-    /*const getAllPost = async() => {
+//btn addPost
+const btnAddPost = divPublication.querySelector("#addPost");
+btnAddPost.addEventListener("click", async(event) => {
+    event.preventDefault();
+    //almacena el comentario
+    const publication = divPublication.querySelector("#textarea").value;
+    console.log(publication);
+    //llamar a createpost
+    await createPost(publication);
+});
 
-    const allpost = await getDocs(collection(db, "post"));
-    allpost.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        //console.log(doc.id, " => ", doc.data());
+const getAllPost = async() => {
 
-        const containerPost = divPublication.querySelector('#containerPostAdd')
-        const timer = query(collection(db, "post"), orderBy("date", "desc"))
+const allpost = await getDocs(collection(db, "post"));
+allpost.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    //console.log(doc.id, " => ", doc.data());
 
-        onSnapshot(timer, (querySnapshot) => {
-            let html = ''
+    const containerPost = divPublication.querySelector('#containerPostAdd')
+    const timer = query(collection(db, "post"), orderBy("date", "desc"))
 
-            querySnapshot.forEach(doc => {
-                const commentPost = doc.data();
-                html += `
+    onSnapshot(timer, (querySnapshot) => {
+        let html = ''
+
+        querySnapshot.forEach(doc => {
+            const commentPost = doc.data();
+            html += `
         <div> 
           <h3 class="titlePost">${commentPost.title}</h3>
           <textarea class="commentDone" readonly>${commentPost.description}</textarea>
@@ -78,12 +87,11 @@ export const Post = () => {
                 Edit</button>
           </div> 
         </div>`
-            })
         })
-    });
-    
-    //window.location.hash = '#/post';
+    })
+});
+//await getAllPost()
+//window.location.hash = '#/post';
+return divPublication;
 
-}*/
-    return divPublication;
-};
+});

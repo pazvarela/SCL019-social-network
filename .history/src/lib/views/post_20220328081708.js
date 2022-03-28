@@ -6,7 +6,7 @@ import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs
 
 //import db from '../../firebase/firebaseConfig.js'
 
-export const Post = () => {
+export const Post = async() => {
     //window.location.hash = '#/post';
     //const user = getUser();
     const headerPost = document.createElement("header");
@@ -31,10 +31,9 @@ export const Post = () => {
         <p></p>
      </div>
     </main>`;
-    headerPost.appendChild(header());
-    headerPost.appendChild(nav());
-    divPublication.appendChild(headerPost)
-    divPublication.innerHTML += view; //concatenar header, nav con view
+    headerPost.innerHTML = nav();
+    headerPost.innerHTML = header();
+    divPublication.innerHTML = view;
 
     //let id = '';
     //btn addPost
@@ -48,22 +47,22 @@ export const Post = () => {
         await createPost(publication);
     });
 
-    /*const getAllPost = async() => {
+    const getAllPost = async() => {
 
-    const allpost = await getDocs(collection(db, "post"));
-    allpost.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        //console.log(doc.id, " => ", doc.data());
+        const allpost = await getDocs(collection(db, "post"));
+        allpost.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data());
 
-        const containerPost = divPublication.querySelector('#containerPostAdd')
-        const timer = query(collection(db, "post"), orderBy("date", "desc"))
+            const containerPost = divPublication.querySelector('#containerPostAdd')
+            const timer = query(collection(db, "post"), orderBy("date", "desc"))
 
-        onSnapshot(timer, (querySnapshot) => {
-            let html = ''
+            onSnapshot(timer, (querySnapshot) => {
+                let html = ''
 
-            querySnapshot.forEach(doc => {
-                const commentPost = doc.data();
-                html += `
+                querySnapshot.forEach(doc => {
+                    const commentPost = doc.data();
+                    html += `
         <div> 
           <h3 class="titlePost">${commentPost.title}</h3>
           <textarea class="commentDone" readonly>${commentPost.description}</textarea>
@@ -78,12 +77,11 @@ export const Post = () => {
                 Edit</button>
           </div> 
         </div>`
+                })
             })
-        })
-    });
-    
-    //window.location.hash = '#/post';
+        });
+        return divPublication;
+        //window.location.hash = '#/post';
 
-}*/
-    return divPublication;
+    }
 };

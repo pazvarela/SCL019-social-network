@@ -6,7 +6,7 @@ import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs
 
 //import db from '../../firebase/firebaseConfig.js'
 
-export const Post = () => {
+export const Post = async() => {
     //window.location.hash = '#/post';
     //const user = getUser();
     const headerPost = document.createElement("header");
@@ -31,10 +31,9 @@ export const Post = () => {
         <p></p>
      </div>
     </main>`;
-    headerPost.appendChild(header());
-    headerPost.appendChild(nav());
-    divPublication.appendChild(headerPost)
-    divPublication.innerHTML += view; //concatenar header, nav con view
+    headerPost.innerHTML = nav();
+    headerPost.innerHTML = header();
+    divPublication.innerHTML = view;
 
     //let id = '';
     //btn addPost

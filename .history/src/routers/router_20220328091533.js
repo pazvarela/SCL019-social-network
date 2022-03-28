@@ -3,7 +3,7 @@ import { Post } from '../lib/views/post.js'
 //import { register } from './views/registerView.js';/
 
 
-const templateviews = (hash) => {
+const templateviews = async(hash) => {
     const containerRoot = document.getElementById("root");
     containerRoot.innerHTML = ''; // Reiniciando el Div a vacio;
     switch (hash) {

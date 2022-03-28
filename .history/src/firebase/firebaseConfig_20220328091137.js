@@ -47,9 +47,9 @@ const createPost = async(newComent, title) => {
     allpost.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-    });
-}*/
+    });*/
+}
 
-export { createPost };
+export { getAllPost, createPost };
 
 //

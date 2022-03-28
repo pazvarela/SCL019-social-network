@@ -31,10 +31,11 @@ export const Post = () => {
         <p></p>
      </div>
     </main>`;
-    headerPost.appendChild(header());
     headerPost.appendChild(nav());
+    headerPost.appendChild(header());
     divPublication.appendChild(headerPost)
-    divPublication.innerHTML += view; //concatenar header, nav con view
+    console.log(divPublication.innerHTML)
+    divPublication.innerHTML += view;
 
     //let id = '';
     //btn addPost
