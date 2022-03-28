@@ -48,7 +48,7 @@ export const Post = () => {
       
         
         const newPublication = divPublication.querySelector("#formPost");
-        new.publication.addEventListener("addPost",async (e) => {
+        newPublication.addEventListener("addPost",async (e) => {
             e.preventDefault();
         const publication = divPublication.querySelector("#textarea").value;
         setTimeout(() => {
@@ -73,3 +73,4 @@ export const Post = () => {
     
     return divPublication;
 });
+};
