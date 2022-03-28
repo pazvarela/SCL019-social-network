@@ -29,7 +29,7 @@ export const Post = () => {
         <h3></h3>
         <p></p>
      </div>
-    </main>`;
+    </main>`
     headerPost.appendChild(header());
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost)
@@ -42,35 +42,46 @@ export const Post = () => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
-        
+
         const divPublication = document.getElementById('root');
         divPublication.innerHTML = view;
-      
-        
+
+
         const newPublication = divPublication.querySelector("#formPost");
+<<<<<<< HEAD
         newPublication.addEventListener("addPost",async (e) => {
+=======
+        newPublication.addEventListener("addPost", async(e) => {
+>>>>>>> 63c8b23f886d95a1b152a100f6f0768f308b08bf
             e.preventDefault();
-        const publication = divPublication.querySelector("#textarea").value;
-        setTimeout(() => {
-            newPublication.reset();
-            console.log(newPublication.reset());
-        }, 1000);
+            const publication = divPublication.querySelector("#textarea").value;
+            setTimeout(() => {
+                newPublication.reset();
+                console.log(newPublication.reset());
+            }, 1000);
 
-        if (publication == "" ){
-            alert("Debes escribir algo");
-        }
-        if(publication =! ""){
+            if (publication == "") {
+                alert("Debes escribir algo");
+            }
+            if (publication = !"") {
+                await createPost(publication);
+                console.log("publication", publication)
+            }
+
+
+            //console.log(publication);
+            //llamar a createpost
             await createPost(publication);
-            console.log("publication", publication)
-        }
+        });
 
-        
-        //console.log(publication);
-        //llamar a createpost
-        await createPost(publication);
+        return divPublication;
     });
+<<<<<<< HEAD
 
     
     return divPublication;
 });
 };
+=======
+}
+>>>>>>> 63c8b23f886d95a1b152a100f6f0768f308b08bf
