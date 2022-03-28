@@ -3,7 +3,7 @@ import { Post } from '../lib/views/post.js'
 //import { register } from './views/registerView.js';/
 
 
-const templateviews = async (hash) => {
+const templateviews =(hash) => {
     const containerRoot = document.getElementById('root');
     containerRoot.innerHTML = ''; // Reiniciando el Div a vacio;
     switch (hash) {
@@ -16,7 +16,7 @@ const templateviews = async (hash) => {
             containerRoot.appendChild(register());
             break;*/
         case '#/post':
-            containerRoot.appendChild(await Post());
+            containerRoot.appendChild(Post());
             break;
         default:
             containerRoot.innerHTML = 'ERROR 404';

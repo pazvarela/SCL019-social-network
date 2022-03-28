@@ -42,13 +42,14 @@ const createPost = async(newComent, title) => {
     }
     // Add a new document with a generated id.
 
-const getAllPost = async() => {
+/*const getAllPost = async() => {
     const allpost = await getDocs(collection(db, "post"));
     allpost.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
     });
-}
+}*/
 
-//export { getAllPost, createPost };
-export { createPost};
+export { createPost };
+
+//
