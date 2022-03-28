@@ -28,42 +28,18 @@ const app = initializeApp(firebaseConfig);
 //dentro de const db se tiene acceso a firestore
 const db = getFirestore(app);
 
-export const createPost = async (comment) => {            // Add a new document with a generated id.
-
-    const date = Timestamp.fromDate(new Date());
-    const name = auth.currentUser.displayName;
-    const userId = auth.currentUser.uid;
-    const likes = [];
-    const likesCounter = 0;
-    await addDoc(collection(db, 'post'), { comment, date, name, userId, likes, likesCounter }); //guardamos la coleccion post 
-  };
-  
-  export const readDataPost = () => {
-    const q = query(collection(db,"post"), orderBy("date","desc"));
-
-    onSnapshot(q, (querySnapshot) => {
-    const commentBox = [];
-    querySnapshot.forEach((doc) => {
-        console.log("documentos", doc)
-    })
-    
-    });
-
-  }
-
-
 // implementacion de firebase en archivo post
 
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 // no resulto XD!
 //ahora si funciona
-/*const createPost = async(newComent, title) => {
+const createPost = async(newComent, title) => {
         const docRef = await addDoc(collection(db, "post"), {
             comment: title,
             comment: newComent
         });
         console.log("Document written with ID: ", docRef.id);
-    }*/
+    }
     // Add a new document with a generated id.
 
 /*const getAllPost = async() => {
@@ -71,8 +47,9 @@ export const createPost = async (comment) => {            // Add a new document 
     allpost.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
-    });
-}*/
+    });*/
+}
 
+export { getAllPost, createPost };
 
-
+//

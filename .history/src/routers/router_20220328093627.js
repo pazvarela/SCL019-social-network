@@ -1,10 +1,10 @@
 //import { login } from '../lib/views/login.ls';
-import { Post } from '../lib/views/wall.js'
+import { Post } from '../lib/views/post.js'
 //import { register } from './views/registerView.js';/
 
 
-const templateviews =(hash) => {
-    const containerRoot = document.getElementById('root');
+const templateviews = (hash) => {
+    const containerRoot = document.getElementById("root");
     containerRoot.innerHTML = ''; // Reiniciando el Div a vacio;
     switch (hash) {
         /*case '#/':
