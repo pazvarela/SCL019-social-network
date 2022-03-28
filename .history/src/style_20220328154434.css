@@ -31,12 +31,11 @@
                 column-gap: initial;
                 justify-content: center;
                 align-items: center;
-                background-image: url(./img/coverbook1.jpg);
-                background-size: cover;
+                background-image: url(./img/bgsheetpost1.png);
                 background-repeat: no-repeat;
                 width: 100%;
             }
-            /*ESTILOS HEADER Y NAV*/
+            /*ESTILOS HEADER*/
             /*HEADER*/
             
             .header {
@@ -46,30 +45,12 @@
                 margin-top: 1rem;
                 padding: auto;
             }
-            /*BTN LOG OUT*/
             
             button[type="button"] {
+                background-image: none;
                 border: none;
-                cursor: pointer;
             }
             /*NAV*/
-            
-            .nav-post {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                column-gap: initial;
-                justify-content: space-between;
-                background-color: var(--opacity-bg-post);
-                border-radius: 102rem;
-                width: auto;
-            }
-            /*ICONOS*/
-            
-            .icon-nav {
-                margin: 0.7rem;
-                font-size: 2rem;
-                color: #f5f5f5;
-            }
             /*ESTILOS INPUT TITLE Y TEXAREA COMENTARIO*/
             
             .formPost {

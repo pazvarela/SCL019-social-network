@@ -33,11 +33,10 @@ const db = getFirestore(app);
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 // no resulto XD!
 //ahora si funciona
-const createPost = async(newComent, title, date) => {
+const createPost = async(newComent, title) => {
         const docRef = await addDoc(collection(db, "post"), {
             title: title,
-            comment: newComent,
-            date: date
+            comment: newComent
         });
         console.log("Document written with ID: ", docRef.id);
     }

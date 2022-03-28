@@ -1,6 +1,6 @@
 import { header } from "../../components/header.js";
 import { nav } from "../../components/nav.js";
-import { createPost } from "../../firebase/firebaseConfig.js";
+import { createPost, getAllPost } from "../../firebase/firebaseConfig.js";
 //import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 
 
@@ -48,27 +48,27 @@ export const Post = () => {
         await createPost(publication);
 
     });
-    /* const containerPost = divPublication.querySelector('#containerPostAdd')
-         //await getAllPost(containerPost);
-     console.log(containerPost)
-     let html = ''
-     html += `
-         <div> 
-           <h3 class="titlePost">${commentPost.title}</h3>
-           <textarea class="commentDone" readonly>${commentPost.description}</textarea>
-        
-           <div class="btns"> 
-             <input class="counter" id="counter" type="number"  value="0" name="" readonly  />
-             
-             <button class="like" id="like"><i class="fa-solid fa-heart"></i></button> 
-             <button class="btnDelete" data-id="${doc.id}"><i class="fa-solid fa-trash"></i>
-                 Delete</button>
-             <button class="btnEdit" data-id="${doc.id}"><i class="fa-solid fa-pen-to-square"></i>
-                 Edit</button>
-           </div> 
-         </div>`
+    const containerPost = divPublication.querySelector('#containerPostAdd')
+        //await getAllPost(containerPost);
+    console.log(containerPost)
+    let html = ''
+    html += `
+        <div> 
+          <h3 class="titlePost">${commentPost.title}</h3>
+          <textarea class="commentDone" readonly>${commentPost.description}</textarea>
+       
+          <div class="btns"> 
+            <input class="counter" id="counter" type="number"  value="0" name="" readonly  />
+            
+            <button class="like" id="like"><i class="fa-solid fa-heart"></i></button> 
+            <button class="btnDelete" data-id="${doc.id}"><i class="fa-solid fa-trash"></i>
+                Delete</button>
+            <button class="btnEdit" data-id="${doc.id}"><i class="fa-solid fa-pen-to-square"></i>
+                Edit</button>
+          </div> 
+        </div>`
 
-     //window.location.hash = '#/post';*/
+    //window.location.hash = '#/post';
 
     return divPublication;
 };

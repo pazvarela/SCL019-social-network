@@ -46,11 +46,10 @@
                 margin-top: 1rem;
                 padding: auto;
             }
-            /*BTN LOG OUT*/
             
             button[type="button"] {
+                background-image: none;
                 border: none;
-                cursor: pointer;
             }
             /*NAV*/
             

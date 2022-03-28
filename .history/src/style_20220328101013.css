@@ -1,6 +1,7 @@
             * {
                 padding: 0;
                 margin: 0;
+                box-sizing: 0;
             }
             /*body {
     background-image: url('./img/backgroundbb.jpeg');
@@ -28,47 +29,22 @@
             
             #root {
                 display: grid;
-                column-gap: initial;
+                column-gap: 1rem;
+                grid-template-rows: (2rem, 2fr);
                 justify-content: center;
                 align-items: center;
-                background-image: url(./img/coverbook1.jpg);
+                background-image: url(./img/bgsheetpost1.png);
                 background-size: cover;
                 background-repeat: no-repeat;
                 width: 100%;
             }
-            /*ESTILOS HEADER Y NAV*/
-            /*HEADER*/
+            /*ESTILOS HEADER*/
             
-            .header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 1rem;
-                padding: auto;
-            }
-            /*BTN LOG OUT*/
-            
-            button[type="button"] {
-                border: none;
-                cursor: pointer;
-            }
-            /*NAV*/
-            
-            .nav-post {
+            header {
                 display: grid;
-                grid-template-columns: auto auto auto;
-                column-gap: initial;
-                justify-content: space-between;
-                background-color: var(--opacity-bg-post);
-                border-radius: 102rem;
-                width: auto;
-            }
-            /*ICONOS*/
-            
-            .icon-nav {
-                margin: 0.7rem;
-                font-size: 2rem;
-                color: #f5f5f5;
+                grid-template-rows: 100%;
+                text-align: center;
+                z-index: 3;
             }
             /*ESTILOS INPUT TITLE Y TEXAREA COMENTARIO*/
             
@@ -93,7 +69,7 @@
                 border-radius: 5rem;
                 border: 0;
                 outline: none;
-                background-color: var(--opacity-bg-post);
+                background-color: var(--brown-dark-color);
                 padding: 0.3rem;
             }
             /*ESTILO TEXTAREA*/
@@ -102,7 +78,7 @@
                 border-radius: 1rem;
                 border: 0;
                 outline: none;
-                background-color: var(--opacity-bg-post);
+                background-color: var(--brown-dark-color);
                 padding: 0.3rem;
                 margin-bottom: 0.5rem;
             }

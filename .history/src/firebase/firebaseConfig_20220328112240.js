@@ -36,8 +36,7 @@ const db = getFirestore(app);
 const createPost = async(newComent, title, date) => {
         const docRef = await addDoc(collection(db, "post"), {
             title: title,
-            comment: newComent,
-            date: date
+            comment: newComent
         });
         console.log("Document written with ID: ", docRef.id);
     }

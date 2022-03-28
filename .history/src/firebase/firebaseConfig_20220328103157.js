@@ -4,7 +4,7 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, query } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -33,31 +33,23 @@ const db = getFirestore(app);
 //CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
 // no resulto XD!
 //ahora si funciona
-const createPost = async(newComent, title, date) => {
+const createPost = async(newComent, title) => {
         const docRef = await addDoc(collection(db, "post"), {
-            title: title,
-            comment: newComent,
-            date: date
+            comment: title,
+            comment: newComent
         });
         console.log("Document written with ID: ", docRef.id);
     }
     // Add a new document with a generated id.
 
-/*const getAllPost = async() => {
+const getAllPost = async() => {
     const allpost = await getDocs(collection(db, "post"));
     allpost.forEach((doc) => {
-        const voidComment = [];
         // doc.data() is never undefined for query doc snapshots
-        const q = query(collection(db, "post"), orderBy("date", "desc"))
         console.log(doc.id, " => ", doc.data());
-        onSnapshot(q, (querySnapshot) => {
-            querySnapshot.forEach(doc => {
-                const commentPost = doc.data();
-                voidComment.push(commentPost)
-                console.log(voidComment)
-        });
     });
-};*/
+}
+
 export { createPost };
 
 //
