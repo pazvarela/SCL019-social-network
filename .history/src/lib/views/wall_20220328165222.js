@@ -29,7 +29,7 @@ export const Post = () => {
         <h3></h3>
         <p></p>
      </div>
-    </main>`
+    </main>`;
     headerPost.appendChild(header());
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost)
@@ -39,37 +39,37 @@ export const Post = () => {
     //btn addPost
     const btnAddPost = divPublication.querySelector("#addPost");
     btnAddPost.addEventListener("click", async(event) => {
-        event.preventDefault();
-        //almacena el comentario
-        //Generando vista de wallPage
+            event.preventDefault();
+            //almacena el comentario
+            //Generando vista de wallPage
 
-        const divPublication = document.getElementById('root');
-        divPublication.innerHTML = view;
+            const divPublication = document.getElementById('root');
+            divPublication.innerHTML = view;
 
 
-        const newPublication = divPublication.querySelector("#formPost");
-        newPublication.addEventListener("addPost", async(e) => {
-            e.preventDefault();
-            const publication = divPublication.querySelector("#textarea").value;
-            setTimeout(() => {
-                newPublication.reset();
-                console.log(newPublication.reset());
-            }, 1000);
+            const newPublication = divPublication.querySelector("#formPost");
+            new.publication.addEventListener("addPost", async(e) => {
+                e.preventDefault();
+                const publication = divPublication.querySelector("#textarea").value;
+                setTimeout(() => {
+                    newPublication.reset();
+                    console.log(newPublication.reset());
+                }, 1000);
 
-            if (publication == "") {
-                alert("Debes escribir algo");
-            }
-            if (publication = !"") {
+                if (publication == "") {
+                    alert("Debes escribir algo");
+                }
+                if (publication = !"") {
+                    await createPost(publication);
+                    console.log("publication", publication)
+                }
+
+
+                //console.log(publication);
+                //llamar a createpost
                 await createPost(publication);
-                console.log("publication", publication)
-            }
+            });
 
-
-            //console.log(publication);
-            //llamar a createpost
-            await createPost(publication);
-        });
-
-        return divPublication;
+            return divPublication;
+        }
     });
-}
