@@ -43,7 +43,7 @@ export const createPost = async(comment) => { // Add a new document with a gener
     await addDoc(collection(db, "post"), { comment }); //guardamos la coleccion post 
 };
 // Leer datos de post
-export const readDataPost = async() => {
+export const readDataPost = () => {
     const q = query(collection(db, "post"), orderBy("date", "desc"));
     onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
         const CommentBox = [];

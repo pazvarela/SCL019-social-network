@@ -4,7 +4,7 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore, collection, addDoc, getDoc, onSnapshot, query, orderBy, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import { printComments } from "../lib/views/post.js"
 
 
@@ -43,7 +43,7 @@ export const createPost = async(comment) => { // Add a new document with a gener
     await addDoc(collection(db, "post"), { comment }); //guardamos la coleccion post 
 };
 // Leer datos de post
-export const readDataPost = async() => {
+export const readDataPost = () => {
     const q = query(collection(db, "post"), orderBy("date", "desc"));
     onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
         const CommentBox = [];
@@ -53,45 +53,50 @@ export const readDataPost = async() => {
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
-                comment: doc.data().comment,
                 likesCounter: 0,
                 likes: []
             })
         })
-        printComments(CommentBox);
-        return CommentBox
     });
+    printComments(CommentBox);
+    return CommentBox
 };
 
 // Borrar datos
 export const postDelete = async(id) => {
-    await deleteDoc(doc(db, 'post', id));
+    await deleteDoc(doc(db, 'posts', id));
     console.log(await deleteDoc);
 };
 
-// Editar datos
-export const editPost = async(id, comment) => {
-    const refreshPost = doc(db, 'post', id);
-    await updateDoc(refreshPost, {
-        comment: comment,
-    });
-};
-// Dar likes y contador de likes
-export const likePost = async(id, userLike) => {
-    const likeRef = doc(db, 'post', id); //accediendo a la colleccion de los posts
-    const docSnap = await getDoc(likeRef); //estamos trayendo un post especifico con getDoc
-    const postData = docSnap.data(); //nos permite agregar esta nueva data a cualquier elemneto de Dom
-    const likesCount = postData.likesCounter;
 
-    if (postData.likes.includes(userLike)) {
-        await updateDoc(likeRef, {
-            likes: arrayRemove(userLike),
-            likesCounter: likesCount - 1,
+
+// implementacion de firebase en archivo post
+
+//CREAR PUBLICACION  "createPost" variable se crea para ejecutar en el muro
+// no resulto XD!
+//ahora si funciona
+/*const createPost = async(newComent, title) => {
+        const docRef = await addDoc(collection(db, "post"), {
+            title: title,
+            comment: newComent,
+            date: date
         });
-    } else {
-        await updateDoc(likeRef, {
-            likes: arrayUnion(userLike),
-            likesCounter: likesCount + 1,
+        console.log("Document written with ID: ", docRef.id);
+    }*/
+
+
+/*const getAllPost = async() => {
+    const allpost = await getDocs(collection(db, "post"));
+    allpost.forEach((doc) => {
+        const voidComment = [];
+        // doc.data() is never undefined for query doc snapshots
+        const q = query(collection(db, "post"), orderBy("date", "desc"))
+        console.log(doc.id, " => ", doc.data());
+        onSnapshot(q, (querySnapshot) => {
+            querySnapshot.forEach(doc => {
+                const commentPost = doc.data();
+                voidComment.push(commentPost)
+                console.log(voidComment)
         });
-    }
-};
+    });
+};*/

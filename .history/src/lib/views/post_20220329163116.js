@@ -35,7 +35,7 @@ export const printComments = (array) => {
     `;
         }
         containerPostvoid.innerHTML += view + userEdit;
-        console.table(array.forEach(html));
+        console.log(array.forEach(html));
     };
 
 };
