@@ -81,6 +81,11 @@ export const readDataPost = () => {
                 console.log(voidComment)
         });
     });
+<<<<<<< HEAD
 };*/
+=======
+}*/
 
-//
+
+>>>>>>> f305b1d38747053e8baa0e0c5f845bebb7031c7d
+
