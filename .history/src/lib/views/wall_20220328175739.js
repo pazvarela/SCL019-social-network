@@ -13,41 +13,36 @@ export const Post = () => {
     divPublication.classList.add("post-container");
     const view = `
     <main>
-    <div id='addElement'>
+        <div id='addElement'>
         <form id="formPost" class="formPost">
             <label for="textTitle" class="textTitle">Title of the book </label>
-            <input type="text" class="textTitle" id="textTitle" required>
+            <input type="text" class="textTitle" id="textTitle">
             <br>
-            <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
-            <textarea name="textarea" id="textArea" required class="textarea" cols="30" rows="10">Write a comment...</textarea>
-            <div class="btn-addPost">
-                <button type="submint" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
+            <label for="DescrpTitle" class="descrpTitle" id="descrpTitle"> Descripción: </label>
+            <textarea name="textarea" id="textarea" class="textarea" cols="30" rows="10">Write a comment...</textarea>
+             <div class="btn-addPost">
+               <button type="button" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
+              </div>
             </div>
-        </form>
-    </div>
-    <div class="containerPostAdd" id="containerPostAdd"></div>
-    <div>
+        <div class="containerPostAdd" id="containerPostAdd"></div>
+        <div>
         <h3></h3>
         <p></p>
-    </div>
-</main>`;
+     </div>
+    </main>`
     headerPost.appendChild(header());
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost)
     divPublication.innerHTML += view; //concatenar header, nav con view
-    //let id = '';
+
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#formPost");
-    btnAddPost.addEventListener("submit", async(event) => {
+    const btnAddPost = divPublication.querySelector("#addPost");
+    btnAddPost.addEventListener("click", async(event) => {
         event.preventDefault();
         //almacena el comentario
-        //Generando vista de wallPage
+        //Generando vista de divPublication
 
-        const formPost = divPublication.querySelector("#textTitle").value;
-        const textArea = divPublication.querySelector("#textArea").value;
-        console.log(formPost, textArea)
-        await createPost(formPost, textArea);
+
+        return divPublication;
     });
-
-    return divPublication;
 }

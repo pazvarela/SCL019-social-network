@@ -37,15 +37,14 @@ export const Post = () => {
     divPublication.innerHTML += view; //concatenar header, nav con view
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#formPost");
+    const btnAddPost = divPublication.querySelector("#addPost");
     btnAddPost.addEventListener("submit", async(event) => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
 
-        const formPost = divPublication.querySelector("#textTitle").value;
-        const textArea = divPublication.querySelector("#textArea").value;
-        console.log(formPost, textArea)
+        const formPost = divPublication.querySelector("textTitle");
+        const textArea = divPublication.querySelector("textTitle");
         await createPost(formPost, textArea);
     });
 

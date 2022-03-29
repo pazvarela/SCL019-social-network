@@ -46,7 +46,7 @@ export const Post = () => {
         const formPost = divPublication.querySelector("#textTitle").value;
         const textArea = divPublication.querySelector("#textArea").value;
         console.log(formPost, textArea)
-        await createPost(formPost, textArea);
+            //await createPost(formPost, textArea);
     });
 
     return divPublication;

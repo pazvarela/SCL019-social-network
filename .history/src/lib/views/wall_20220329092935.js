@@ -19,7 +19,7 @@ export const Post = () => {
             <input type="text" class="textTitle" id="textTitle" required>
             <br>
             <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
-            <textarea name="textarea" id="textArea" required class="textarea" cols="30" rows="10">Write a comment...</textarea>
+            <textarea name="textarea" id="textarea" required class="textarea" cols="30" rows="10">Write a comment...</textarea>
             <div class="btn-addPost">
                 <button type="submint" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
             </div>
@@ -35,18 +35,20 @@ export const Post = () => {
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost)
     divPublication.innerHTML += view; //concatenar header, nav con view
+    console.log(divPublication.innerHTML += view)
+
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#formPost");
+    const btnAddPost = divPublication.querySelector("#addPost");
     btnAddPost.addEventListener("submit", async(event) => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
 
-        const formPost = divPublication.querySelector("#textTitle").value;
-        const textArea = divPublication.querySelector("#textArea").value;
-        console.log(formPost, textArea)
-        await createPost(formPost, textArea);
+        const divPublication = document.getElementById('root');
+        divPublication.innerHTML = view;
+        const newPublication = divPublication.querySelector("#formPost");
+        await createPost(publication);
     });
 
     return divPublication;

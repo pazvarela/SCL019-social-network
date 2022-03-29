@@ -37,7 +37,7 @@ export const Post = () => {
     divPublication.innerHTML += view; //concatenar header, nav con view
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#formPost");
+    const btnAddPost = divPublication.querySelector("#addPost");
     btnAddPost.addEventListener("submit", async(event) => {
         event.preventDefault();
         //almacena el comentario
