@@ -18,8 +18,8 @@ export const Post = () => {
             <label for="textTitle" class="textTitle">Title of the book </label>
             <input type="text" class="textTitle" id="textTitle" required>
             <br>
-            <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
-            <textarea name="textarea" id="textArea" required class="textarea" cols="30" rows="10">Write a comment...</textarea>
+            <label for="DescrpTitle" class="descrpTitle" required> Descripción: </label>
+            <textarea name="textarea" id="textarea" class="textarea" cols="30" rows="10">Write a comment...</textarea>
             <div class="btn-addPost">
                 <button type="submint" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
             </div>
@@ -35,25 +35,38 @@ export const Post = () => {
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost)
     divPublication.innerHTML += view; //concatenar header, nav con view
+    console.log(divPublication.innerHTML += view)
+
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#formPost");
-    btnAddPost.addEventListener("submit", async(event) => {
+    const btnAddPost = divPublication.querySelector("#addPost");
+    btnAddPost.addEventListener("click", async(event) => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
-       const inputTitle = formPost.querySelector("#textTitle").value;
-       const textArea = formPost.querySelector("#textarea").value;
-       console.log(inputTitle,textArea);
-       
-        await createPost(inputTitle,textArea);
-        
 
-    
+        const divPublication = document.getElementById('root');
+        divPublication.innerHTML = view;
+        const newPublication = divPublication.querySelector("#formPost");
+        newPublication.addEventListener("click", async(e) => {
+            e.preventDefault();
+            const publication = divPublication.querySelector("#textarea").value;
+            setTimeout(() => {
+                newPublication.reset();
+                console.log(newPublication.reset());
+            }, 1000);
+
+            if (publication == "") {
+                alert("Debes escribir algo");
+            }
+            if (publication = !"") {
+                await createPost(publication);
+                console.log("publication", publication)
+            }
+            //console.log(publication);
+            //llamar a createpost
+            await createPost(publication);
+        });
     });
-
-
-    
-
-return divPublication;
+    return divPublication;
 }

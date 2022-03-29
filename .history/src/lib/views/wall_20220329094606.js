@@ -42,18 +42,12 @@ export const Post = () => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
-       const inputTitle = formPost.querySelector("#textTitle").value;
-       const textArea = formPost.querySelector("#textarea").value;
-       console.log(inputTitle,textArea);
-       
-        await createPost(inputTitle,textArea);
-        
 
-    
+        const formPost = divPublication.querySelector("#textTitle").value;
+        const textArea = divPublication.querySelector("#textArea").value;
+        console.log(formPost, textArea)
+        await createPost(formPost, textArea);
     });
 
-
-    
-
-return divPublication;
+    return divPublication;
 }
