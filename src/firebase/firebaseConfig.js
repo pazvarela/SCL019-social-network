@@ -57,7 +57,6 @@ export const readDataPost = () => {
             })
         })
     });
-<<<<<<< HEAD
     return CommentBoxgit
 };
 
@@ -67,11 +66,6 @@ export const postDelete = async (id) => {
   };
   
 
-=======
-    //return CommentBoxgit
-    console.log(CommentBoxgit)
-}
->>>>>>> 033675afe488c4d0100bacf544a7c6a072a0f1b4
 
 
 // implementacion de firebase en archivo post
