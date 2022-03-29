@@ -1,6 +1,10 @@
 import { header } from "../../components/header.js";
 import { nav } from "../../components/nav.js";
+<<<<<<< HEAD
 import { createPost, readDataPost } from "../../firebase/firebaseConfig.js";
+=======
+import { createPost, readDataPost, } from "../../firebase/firebaseConfig.js";
+>>>>>>> 65cd0c9b4890f9f05a4e5510da8fd82b9f0b8c5a
 //import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 
 //import db from '../../firebase/firebaseConfig.js'
@@ -49,6 +53,7 @@ export const Post = () => {
         await readDataPost(inputTitle, textArea);
     });
 
+<<<<<<< HEAD
     //vaciar textarea
     const emptyText = divPublication.querySelector("textArea");
     emptyText.addEventListener("focus", () => {
@@ -56,3 +61,14 @@ export const Post = () => {
     })
     return divPublication;
 };
+=======
+
+//vaciar textarea
+    const emptyText = divPublication.querySelector("textArea");
+    emptyText.addEventListener("focus", () => {
+    emptyText.value = "";
+})
+
+return divPublication;
+};
+>>>>>>> 65cd0c9b4890f9f05a4e5510da8fd82b9f0b8c5a

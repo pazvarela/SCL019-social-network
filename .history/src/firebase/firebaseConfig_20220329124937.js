@@ -57,9 +57,13 @@ export const readDataPost = () => {
                 likes: []
             })
         })
-    });
+    }); <<
+    << << < HEAD
     printComments(CommentBox);
-    return CommentBox
+    return CommentBox ===
+        === = <<
+        << << < HEAD
+    return CommentBoxgit
 };
 
 export const postDelete = async(id) => {
@@ -67,6 +71,14 @@ export const postDelete = async(id) => {
     console.log(await deleteDoc);
 };
 
+
+===
+=== =
+//return CommentBoxgit
+console.log(CommentBoxgit) >>>
+    >>> > 65 cd0c9b4890f9f05a4e5510da8fd82b9f0b8c5a
+} >>>
+>>> > 033675 afe488c4d0100bacf544a7c6a072a0f1b4
 
 
 // implementacion de firebase en archivo post
