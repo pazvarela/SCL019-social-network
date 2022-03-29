@@ -32,10 +32,13 @@ export const printComments = (array) => {
       </button>
         <button class="saveBtn" id="saveBtn" data-id="${element.id}"></button>
     </div>
+
     `;
         }
+
         containerPostvoid.innerHTML += view + userEdit;
     };
+
     console.log(array.forEach(html));
 
 };

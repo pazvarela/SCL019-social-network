@@ -1,6 +1,6 @@
 import { header } from "../../components/header.js";
 import { nav } from "../../components/nav.js";
-import { createPost, readDataPost } from "../../firebase/firebaseConfig.js";
+import { createPost } from "../../firebase/firebaseConfig.js";
 //import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 
 //import db from '../../firebase/firebaseConfig.js'
@@ -46,9 +46,7 @@ export const Post = () => {
         const textArea = formPost.querySelector("#textArea").value;
         console.log(inputTitle, textArea);
         await createPost(inputTitle, textArea);
-        await readDataPost(inputTitle, textArea);
     });
-
     //vaciar textarea
     const emptyText = divPublication.querySelector("textArea");
     emptyText.addEventListener("focus", () => {

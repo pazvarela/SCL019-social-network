@@ -58,8 +58,8 @@ export const readDataPost = () => {
             })
         })
     });
-    printComments(CommentBox);
-    return CommentBox
+    printComment(CommentBox);
+    return CommentBoxgit
 }
 
 
