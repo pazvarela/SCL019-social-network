@@ -82,6 +82,5 @@ export const readDataPost = () => {
         });
     });
 };*/
-export { createPost };
 
 //
