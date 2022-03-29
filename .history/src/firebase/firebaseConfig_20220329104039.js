@@ -57,7 +57,7 @@ export const readDataPost = () => {
             })
         })
     });
-    //return CommentBoxgit
+    return CommentBoxgit
     console.log(CommentBoxgit)
 }
 
