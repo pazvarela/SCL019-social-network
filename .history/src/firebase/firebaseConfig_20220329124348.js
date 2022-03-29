@@ -5,7 +5,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
 import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import { printComments } from "../lib/views/post.js"
+import { printComment } from "../lib/views/post.js"
 
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -58,14 +58,9 @@ export const readDataPost = () => {
             })
         })
     });
-    return CommentBox
-};
-
-export const postDelete = async(id) => {
-    await deleteDoc(doc(db, 'posts', id));
-    console.log(await deleteDoc);
-};
-
+    printComment(CommentBox);
+    return CommentBoxgit
+}
 
 
 // implementacion de firebase en archivo post

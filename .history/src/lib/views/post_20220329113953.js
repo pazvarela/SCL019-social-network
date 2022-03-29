@@ -1,4 +1,4 @@
-import { readDataPost, postDelete } from "../../firebase/firebaseConfig.js";
+import { readDataPost } from "../../firebase/firebaseConfig.js";
 
 export const printComments = (array) => {
     const containerPostvoid = document.querySelector("#containerPostAdd");
@@ -32,10 +32,13 @@ export const printComments = (array) => {
       </button>
         <button class="saveBtn" id="saveBtn" data-id="${element.id}"></button>
     </div>
+
     `;
         }
+
         containerPostvoid.innerHTML += view + userEdit;
     };
+
     console.log(array.forEach(html));
 
 };

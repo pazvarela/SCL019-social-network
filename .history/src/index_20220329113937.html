@@ -1,10 +1,21 @@
-import { readDataPost, postDelete } from "../../firebase/firebaseConfig.js";
+<!DOCTYPE html>
+<html lang="en">
 
-export const printComments = (array) => {
-    const containerPostvoid = document.querySelector("#containerPostAdd");
-    containerPostvoid.innerHTML = " ";
-    const view = (element) => {
-        const html = `
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- load all Font Awesome styles + include all v5 backwards compatibility by default -->
+    <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/c52311aa4d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+    <title>BarterBook</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="main.js"></script>
     <div id="containerPost">
         <div id="nameUser">
             <p>${element.data.name}</p>
@@ -19,10 +30,7 @@ export const printComments = (array) => {
         </button>
         </div>
     </div>
-    `;
-        let userEdit = " ";
-        if (element.data.userId === auth.currentUser.uid) {
-            userEdit = `
+    `; let userEdit = " "; if (element.data.userId === auth.currentUser.uid) { userEdit = `
     <div id="btnsEdit">
         <button class="btnDelete" data-id="${element.id}">
         <i class="fa-solid fa-trash"></i> Delete
@@ -32,10 +40,6 @@ export const printComments = (array) => {
       </button>
         <button class="saveBtn" id="saveBtn" data-id="${element.id}"></button>
     </div>
-    `;
-        }
-        containerPostvoid.innerHTML += view + userEdit;
-    };
-    console.log(array.forEach(html));
+</body>
 
-};
+</html>
