@@ -19,7 +19,7 @@ export const Post = () => {
             <input type="text" class="textTitle" id="textTitle" required>
             <br>
             <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
-            <textarea name="textarea" id="textArea" required class="textarea" cols="30" rows="10">Write a comment...</textarea>
+            <textarea name="textarea" id="textArea" required placeholder class="textarea" cols="30" rows="10">Write a comment...</textarea>
             <div class="btn-addPost">
                 <button type="submint" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
             </div>
@@ -42,10 +42,18 @@ export const Post = () => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
-        const inputTitle = formPost.querySelector("#textTitle").value;
-        const textArea = formPost.querySelector("#textarea").value;
-        console.log(inputTitle, textArea);
-        await createPost(inputTitle, textArea);
-    })
-    return divPublication;
+       const inputTitle = formPost.querySelector("#textTitle").value;
+       const textArea = formPost.querySelector("#textArea").value;
+       console.log(inputTitle,textArea);
+       
+        await createPost(inputTitle,textArea);
+        
+
+    
+    });
+
+
+    
+
+return divPublication;
 }
