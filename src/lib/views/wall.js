@@ -16,18 +16,22 @@ export const Post = () => {
         <div id='addElement'>
         <form id="formPost" class="formPost">
             <label for="textTitle" class="textTitle">Title of the book </label>
-            <input type="text" class="textTitle" id="textTitle">
+            <input type="text" class="textTitle" id="textTitle" required>
             <br>
             <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
-            <textarea name="textarea" id="textarea" class="textarea" cols="30" rows="10">Write a comment...</textarea>
+            <textarea name="textarea" id="textarea" class="textarea" cols="30" rows="10" required>Write a comment...</textarea>
              <div class="btn-addPost">
-               <button type="button" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
+               <button type="submit" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
               </div>
+              </form>
             </div>
+        
         <div class="containerPostAdd" id="containerPostAdd"></div>
+
         <div>
         <h3></h3>
         <p></p>
+       
      </div>
     </main>`
     headerPost.appendChild(header());
@@ -37,45 +41,24 @@ export const Post = () => {
 
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#addPost");
-    btnAddPost.addEventListener("click", async(event) => {
+    const formPost = divPublication.querySelector("#formPost");
+    
+    formPost.addEventListener("submit", async(event) => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
-
-        const divPublication = document.getElementById('root');
-        divPublication.innerHTML = view;
-
-
-        const newPublication = divPublication.querySelector("#formPost");
-
-
-        newPublication.addEventListener("addPost",async (e) => {
-
-            e.preventDefault();
-            const publication = divPublication.querySelector("#textarea").value;
-            setTimeout(() => {
-                newPublication.reset();
-                console.log(newPublication.reset());
-            }, 1000);
-
-            if (publication == "") {
-                alert("Debes escribir algo");
-            }
-            if (publication = !"") {
-                await createPost(publication);
-                console.log("publication", publication)
-            }
-
-
-            //console.log(publication);
-            //llamar a createpost
-            await createPost(publication);
-        });
+       const inputTitle = formPost.querySelector("#textTitle").value;
+       const textArea = formPost.querySelector("#textarea").value;
+       console.log(inputTitle,textArea);
+       
+        await createPost(inputTitle,textArea);
+        
 
     
     });
 
+
+    
 
 return divPublication;
 }
