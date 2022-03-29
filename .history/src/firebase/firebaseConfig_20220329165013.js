@@ -5,7 +5,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
 import { getFirestore, collection, addDoc, getDoc, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
+import {
+    getAuth
+}
+from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
+
 import { printComments } from "../lib/views/post.js"
 
 
@@ -37,14 +41,11 @@ export const auth = getAuth(app); // Initialize Firebasegit
 export const createPost = async(comment) => { // Add a new document with a generated id.
 
     const date = Timestamp.fromDate(new Date());
-    //const userId = auth.currentUser.uid;
+    const userId = auth.currentUser.uid;
     /*const name = auth.currentUser.displayName;
     const likes = [];
     const likesCounter = 0;*/
-    await addDoc(collection(db, "post"), {
-        comment,
-        date,
-    }); //guardamos la coleccion post 
+    await addDoc(collection(db, "post"), { comment, date, userId }); //guardamos la coleccion post 
 };
 // Leer datos de post
 export const readDataPost = async() => {
@@ -57,7 +58,6 @@ export const readDataPost = async() => {
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
-                date: doc.data().date,
                 comment: doc.data().comment,
                 likesCounter: 0,
                 likes: []

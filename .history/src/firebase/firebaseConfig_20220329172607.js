@@ -57,14 +57,14 @@ export const readDataPost = async() => {
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
-                date: doc.data().date,
                 comment: doc.data().comment,
                 likesCounter: 0,
                 likes: []
             })
         })
         printComments(CommentBox);
-        return CommentBox
+        console.table(CommentBox)
+            //return CommentBox
     });
 };
 

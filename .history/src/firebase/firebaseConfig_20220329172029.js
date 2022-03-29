@@ -4,7 +4,7 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore, collection, addDoc, getDoc, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDoc, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp, uid } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
 import { printComments } from "../lib/views/post.js"
 
@@ -57,7 +57,6 @@ export const readDataPost = async() => {
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
-                date: doc.data().date,
                 comment: doc.data().comment,
                 likesCounter: 0,
                 likes: []
