@@ -52,13 +52,8 @@ export const readDataPost = async () => {
     onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
         const commentBox = [];
         querySnapshot.forEach((doc) => { //QuerySnapshot accede a los objetos que llama de doc por medio del array
-<<<<<<< HEAD
             console.log("documentos", doc)
             commentBox.push({
-=======
-            console.table("documentos", doc.data)
-            CommentBox.push({
->>>>>>> 3c8989dde62229f7188ef1e49258cd72ab0e6b2e
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
