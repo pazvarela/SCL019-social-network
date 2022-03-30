@@ -46,7 +46,7 @@ export const Post = () => {
         const inputTitle = formPost.querySelector("#textTitle").value;
         const textArea = formPost.querySelector("#textArea").value;
         createPost(inputTitle, textArea);
-        readDataPost(inputTitle, textArea);
+        readDataPost();
     });
 
     //vaciar textarea
@@ -55,8 +55,4 @@ export const Post = () => {
         emptyText.value = "";
     })
     return divPublication;
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3

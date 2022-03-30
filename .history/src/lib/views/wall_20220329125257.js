@@ -31,7 +31,6 @@ export const Post = () => {
             <p></p>
         </div>
     </main>`;
-    readDataPost()
     headerPost.appendChild(header());
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost);
@@ -45,8 +44,9 @@ export const Post = () => {
         //Generando vista de wallPage
         const inputTitle = formPost.querySelector("#textTitle").value;
         const textArea = formPost.querySelector("#textArea").value;
-        createPost(inputTitle, textArea);
-        readDataPost(inputTitle, textArea);
+        console.log(inputTitle, textArea);
+        await createPost(inputTitle, textArea);
+        await readDataPost(inputTitle, textArea);
     });
 
     //vaciar textarea
@@ -55,8 +55,4 @@ export const Post = () => {
         emptyText.value = "";
     })
     return divPublication;
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3

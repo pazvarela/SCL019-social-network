@@ -45,7 +45,8 @@ export const Post = () => {
         //Generando vista de wallPage
         const inputTitle = formPost.querySelector("#textTitle").value;
         const textArea = formPost.querySelector("#textArea").value;
-        createPost(inputTitle, textArea);
+        console.log(createPost(inputTitle, textArea));
+        //createPost(inputTitle, textArea);
         readDataPost(inputTitle, textArea);
     });
 
@@ -55,8 +56,4 @@ export const Post = () => {
         emptyText.value = "";
     })
     return divPublication;
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3

@@ -4,13 +4,7 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-<<<<<<< HEAD
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import { async } from "regenerator-runtime";
-=======
-import { getFirestore, collection, addDoc, getDoc, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy, updateDoc, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
 import { printComments } from "../lib/views/post.js"
 
 
@@ -34,59 +28,39 @@ const app = initializeApp(firebaseConfig);
 // para poder acceder a la variable se exporta
 //dentro de const db se tiene acceso a firestore
 const db = getFirestore(app);
-export const auth = getAuth(app); // Initialize Firebasegit
+//export const auth = getAuth(app); // Initialize Firebasegit
 //export const user = auth.currentUser; // autentifica el usuario
 
 
 // guardar datos post
 export const createPost = async(comment) => { // Add a new document with a generated id.
 
-    const date = Timestamp.fromDate(new Date());
-    //const userId = auth.currentUser.uid;
-    /*const name = auth.currentUser.displayName;
+    /*const date = Timestamp.fromDate(new Date());
+    const name = auth.currentUser.displayName;
+    const userId = auth.currentUser.uid;
     const likes = [];
     const likesCounter = 0;*/
-    await addDoc(collection(db, "post"), {
-        comment,
-        date,
-    }); //guardamos la coleccion post 
+    await addDoc(collection(db, "post"), { comment }); //guardamos la coleccion post 
 };
 // Leer datos de post
-<<<<<<< HEAD
-export const readDataPost = async () => {
-=======
-export const readDataPost = async() => {
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3
+export const readDataPost = () => {
     const q = query(collection(db, "post"), orderBy("date", "desc"));
     onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
-        const commentBox = [];
+        const CommentBox = [];
         querySnapshot.forEach((doc) => { //QuerySnapshot accede a los objetos que llama de doc por medio del array
-<<<<<<< HEAD
             console.log("documentos", doc)
-            commentBox.push({
-=======
-            console.table("documentos", doc)
             CommentBox.push({
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
-                date: doc.data().date,
                 comment: doc.data().comment,
                 likesCounter: 0,
                 likes: []
             })
         })
-<<<<<<< HEAD
-        printComments (commentBox);
-        return commentBox;
-    });
-   
-=======
         printComments(CommentBox);
         return CommentBox
     });
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3
 };
 
 // Borrar datos
