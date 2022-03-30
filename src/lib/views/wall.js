@@ -55,8 +55,4 @@ export const Post = () => {
         emptyText.value = "";
     })
     return divPublication;
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> e3fe1ac31c547906b75440500e78337fae3111a3
