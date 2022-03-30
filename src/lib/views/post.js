@@ -36,6 +36,20 @@ export const printComments = (array) => {
         }
         containerPostvoid.innerHTML += view + userEdit;
     };
-    console.log(array.forEach(html));
+    array.forEach(html);
 
+
+   //Evento para borrar post
+  const btnDelete = containerPostvoid.querySelectorAll(".btnDelete");
+  btnDelete.forEach((e) => {
+    e.addEventListener('click', () => {
+      // eslint-disable-next-line no-restricted-globals
+      const deleteConfirm = confirm('¿Estás seguro de eliminar este Post?');
+      if (deleteConfirm === true) {
+        postDelete(e.value);
+      }
+    });
+  });
+
+ return printComments
 };

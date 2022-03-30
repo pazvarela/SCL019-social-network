@@ -5,6 +5,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
 import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { async } from "regenerator-runtime";
 import { printComments } from "../lib/views/post.js"
 
 
@@ -43,13 +44,13 @@ export const createPost = async(comment) => { // Add a new document with a gener
     await addDoc(collection(db, "post"), { comment }); //guardamos la coleccion post 
 };
 // Leer datos de post
-export const readDataPost = () => {
+export const readDataPost = async () => {
     const q = query(collection(db, "post"), orderBy("date", "desc"));
     onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
-        const CommentBox = [];
+        const commentBox = [];
         querySnapshot.forEach((doc) => { //QuerySnapshot accede a los objetos que llama de doc por medio del array
             console.log("documentos", doc)
-            CommentBox.push({
+            commentBox.push({
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
@@ -57,8 +58,10 @@ export const readDataPost = () => {
                 likes: []
             })
         })
+        printComments (commentBox);
+        return commentBox;
     });
-    return CommentBox
+   
 };
 
 export const postDelete = async(id) => {
