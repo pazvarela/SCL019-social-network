@@ -4,8 +4,8 @@
 //import { initializeApp } from 'firebase/app';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 // se importa función para obtener los servicios de firestore y conectar a la BdD
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
-import { async } from "regenerator-runtime";
+import { getFirestore, collection, addDoc, getDoc, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js';
 import { printComments } from "../lib/views/post.js"
 
 
@@ -47,18 +47,13 @@ export const createPost = async(comment) => { // Add a new document with a gener
     }); //guardamos la coleccion post 
 };
 // Leer datos de post
-export const readDataPost = async () => {
+export const readDataPost = async() => {
     const q = query(collection(db, "post"), orderBy("date", "desc"));
     onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
-        const commentBox = [];
+        const CommentBox = [];
         querySnapshot.forEach((doc) => { //QuerySnapshot accede a los objetos que llama de doc por medio del array
-<<<<<<< HEAD
-            console.log("documentos", doc)
-            commentBox.push({
-=======
             console.table("documentos", doc.data)
             CommentBox.push({
->>>>>>> 3c8989dde62229f7188ef1e49258cd72ab0e6b2e
                 id: doc.id,
                 datepost: Date.now(),
                 data: doc.data(),
@@ -68,10 +63,9 @@ export const readDataPost = async () => {
                 likes: []
             })
         })
-        printComments (commentBox);
-        return commentBox;
+        printComments(CommentBox);
+        return CommentBox
     });
-   
 };
 
 // Borrar datos
