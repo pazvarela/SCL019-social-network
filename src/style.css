@@ -34,10 +34,7 @@
 }
 
 
-/*ESTILOS HEADER Y NAV*/
 
-
-/*HEADER*/
 
 .header {
     display: flex;
@@ -49,9 +46,12 @@
 }
 
 
-/*BTN LOG OUT*/
 
-.btn-logOut {
+
+.btn-logOut,
+.btnDelete,
+.btnEdit,
+.saveBtn {
     border: 0.1rem solid var(--white-brown-color);
     cursor: pointer;
     background-color: var(--chocolate-color);
@@ -64,7 +64,7 @@
 }
 
 
-/*NAV*/
+
 
 .nav-post {
     display: grid;
@@ -78,7 +78,7 @@
 }
 
 
-/*ICONOS*/
+
 
 .icon-nav {
     margin: 0.7rem;
@@ -87,7 +87,7 @@
 }
 
 
-/*ESTILOS INPUT TITLE Y TEXAREA COMENTARIO*/
+
 
 .formPost {
     display: grid;
@@ -97,7 +97,6 @@
 }
 
 
-/*ESTILOS LABEL TITLE y DESCRIPTION*/
 
 .textTitle,
 .descrpTitle,
@@ -108,7 +107,6 @@
 }
 
 
-/*INPUT TITLE*/
 
 input[type="text" i] {
     border-radius: 5rem;
@@ -119,7 +117,6 @@ input[type="text" i] {
 }
 
 
-/*ESTILO TEXTAREA*/
 
 .textarea {
     border-radius: 1rem;
@@ -131,7 +128,7 @@ input[type="text" i] {
 }
 
 
-/*ESTILOS BTN ADD POST*/
+
 
 .btn-addPost {
     display: flex;
@@ -139,16 +136,11 @@ input[type="text" i] {
     align-items: flex-end;
 }
 
-#addPost:hover {
+#addPost:hover,
+.btn-logOut:hover {
+    opacity: 0.7;
+    transition: 0.3s;
     cursor: pointer;
-    color: rgba(255, 255, 255, 1) !important;
-    box-shadow: 0 0.25rem 0.4rem #dec6af;
-    transition: all 0.2s ease;
-}
-
-.fa-circle-plus::before {
-    padding: auto;
-    border-radius: none;
 }
 
 #addPost {
@@ -161,4 +153,62 @@ input[type="text" i] {
     background-color: var(--chocolate-color);
     border-radius: 1.25rem;
     width: 15rem;
+}
+
+
+
+.containerPost {
+    border-radius: 1rem;
+    outline: none;
+    background-color: var(--opacity-bg-post);
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+.commentDone {
+    background-color: var(--brown-light-color);
+    border-radius: 0.5rem;
+    padding: auto;
+}
+
+
+
+
+.likeContainer {
+    display: grid;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.counter {
+    background: none;
+    border: none;
+    padding-left: 1rem;
+    font-family: "Baloo 2", cursive;
+    font-size: 1rem;
+}
+
+.like {
+    font-family: "Baloo 2", cursive;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    border-color: transparent;
+    padding: 0.25rem;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center
+}
+
+.fa-heart:before,
+.fa-circle-plus::before {
+    padding: 0 0.3rem 0 0;
+}
+
+.like:hover {
+    background-color: #f5f5f5;
+    transition: 0.3s;
+    opacity: 0.5;
 }

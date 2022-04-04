@@ -1,11 +1,11 @@
 import { header } from "../../components/header.js";
 import { nav } from "../../components/nav.js";
 import { createPost, readDataPost } from "../../firebase/firebaseConfig.js";
-//import { collection, getDocs, orderBy } from 'https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore.js';
+//import { collection, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 //import db from '../../firebase/firebaseConfig.js'
 
-export const Post = () => {
+export const Post = async () => {
     //window.location.hash = '#/post';
     //const user = getUser();
     const headerPost = document.createElement("header");
@@ -25,13 +25,13 @@ export const Post = () => {
                 </div>
             </form>
         </div>
-        <div class="containerPostAdd" id="containerPostAdd"></div>
-        <div>
-            <h3></h3>
-            <p></p>
+        <div class="containerPostAdd" id="containerPostAdd">
+        
         </div>
+       
     </main>`;
-    readDataPost()
+    
+    
     headerPost.appendChild(header());
     headerPost.appendChild(nav());
     divPublication.appendChild(headerPost);
@@ -45,10 +45,13 @@ export const Post = () => {
         //Generando vista de wallPage
         const inputTitle = formPost.querySelector("#textTitle").value;
         const textArea = formPost.querySelector("#textArea").value;
-        createPost(inputTitle, textArea);
-        readDataPost(inputTitle, textArea);
+       //readDataPost(inputTitle, textArea);
+       await createPost(inputTitle, textArea);
+        
     });
-
+    const containerPost = divPublication.querySelector("#containerPostAdd");
+    containerPost.innerHTML = ""
+    await readDataPost()
     //vaciar textarea
     const emptyText = divPublication.querySelector("textArea");
     emptyText.addEventListener("focus", () => {
