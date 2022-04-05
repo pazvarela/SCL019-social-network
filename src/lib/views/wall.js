@@ -30,7 +30,7 @@ export const Post = async () => {
         </div>
        
     </main>`;
-    
+    await readDataPost()
     
     headerPost.appendChild(header());
     headerPost.appendChild(nav());
@@ -38,24 +38,25 @@ export const Post = async () => {
     divPublication.innerHTML += view; //concatenar header, nav con view
     //let id = '';
     //btn addPost
-    const btnAddPost = divPublication.querySelector("#formPost");
-    btnAddPost.addEventListener("submit", async(event) => {
+    const formAddPost = divPublication.querySelector("#formPost");
+    formAddPost.addEventListener("submit", async(event) => {
         event.preventDefault();
         //almacena el comentario
         //Generando vista de wallPage
         const inputTitle = formPost.querySelector("#textTitle").value;
         const textArea = formPost.querySelector("#textArea").value;
-       //readDataPost(inputTitle, textArea);
+    
        await createPost(inputTitle, textArea);
         
     });
-    const containerPost = divPublication.querySelector("#containerPostAdd");
-    containerPost.innerHTML = ""
-    await readDataPost()
+   
+   
     //vaciar textarea
     const emptyText = divPublication.querySelector("textArea");
     emptyText.addEventListener("focus", () => {
         emptyText.value = "";
     })
+    divPublication.querySelector("#textTitle").value = " ";
+
     return divPublication;
 };

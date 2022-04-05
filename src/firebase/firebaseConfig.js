@@ -5,7 +5,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // se importa función para obtener los servicios de firestore y conectar a la BD
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp, doc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { printComments } from "../lib/views/post.js"
 
@@ -62,28 +62,27 @@ export const readDataPost = async() => {
  //console.log(querySnapshot)
 
  const q = query(collection(db, "post"), orderBy("date", "desc"));
+ 
     onSnapshot(q, (querySnapshot) => {
+        const containerPostvoid = document.querySelector("#containerPostAdd");
+        containerPostvoid.innerHTML = ""
         querySnapshot.forEach(doc =>{
+            const docId = doc.id
             const docPost = doc.data()
-            printComments(docPost);
+            printComments(docPost, docId);
 
 
         })
         return printComments
 
     });
-    /* const q = query(collection(db, "post"), orderBy("date", "desc"));
-    onSnapshot(q, (querySnapshot) => { //onSnapshot escucha los elementos del documento
-       
-        querySnapshot.forEach((doc) => {
-            const docPost = doc.data();
-            
-            printComments(docPost);
-            console.log(docPost)
-        })
-       
-
-        return printComments
-    }); */
+    
    
 };
+ 
+// Eliminar comentario
+export const deleteComment = async (id) => {
+    await deleteDoc(doc(db, "post", id));
+    //console.log(deleteComment);
+};
+
