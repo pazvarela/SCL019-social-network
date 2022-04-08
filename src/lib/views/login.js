@@ -1,15 +1,36 @@
-export const login = () => {
-    const viewHome = document.createElement('div');
-    viewHome.classList.add("container-login");
-    const formHome = `<form id = "formularioAcceso" class = "formularioAcceso">
-    <div class= "email"> Email </div>
-    <input type = "email" id= "emailAcceso" class= "emailAcceso" placeholder="Email"/>
-    <div class= "password"> Password </div>
-    <input type="password" id="passwordAcceso" class="passwordAcceso" placeholder= "Enter password"/>
-    button type="button" name="registrar" id="enviarRegistro" class="enviarRegistro" /button>
-    </form>`;
-    viewHome.innerHTML = formHome;
-    console.log(viewHome);
+//import { checkGoogle } from "../../firebase/firebaseConfig";
 
-    // return viewHome
+export const login = () => {
+    window.location.hash = "#/login"
+    const containerLogin = document.createElement('div');
+    const loginForm = `
+    <form id = "formAccess" class = "formularioAcceso">
+    <div class="imgBarterBook"> 
+    <img class="container-img" src="./img/logo-mobil.png" alt="logo BarterBook con un ícono del libro abierto" />
+    </div>
+    <h1 class="iniciarsesion" id="iniciarSesion">
+    Log in
+    </h1>
+    
+    <div class="btnGoogle">
+        <button class="btnconfirm" id="btnConfirm">Sign In</button>   
+    </div>
+
+    </form>`;
+   
+    containerLogin.innerHTML = loginForm
+
+    //------------------BTN PARA INICIO SESION CON GOOGLE-------------------
+    /*printPage
+    .querySelector('#btnConfirm')
+    .addEventListener('click', () => {
+      checkGoogle();
+      //;
+    });*/
+
+
+  return containerLogin;
 };
+
+
+

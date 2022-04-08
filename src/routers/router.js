@@ -1,18 +1,21 @@
 //import { login } from '../lib/views/login.ls';
 import { Post } from '../lib/views/wall.js'
+import { login } from '../lib/views/login.js';
 //import { register } from './views/registerView.js';/
+
 
 
 const templateviews = async (hash) => {
     const containerRoot = document.getElementById('root');
     containerRoot.innerHTML = ''; // Reiniciando el Div a vacio;
     switch (hash) {
-        /*case '#/':
+        case "":
+        case '#/':
             containerRoot.appendChild(login());
         case '#/login':
             containerRoot.appendChild(login());
             break;
-        case '#/register':
+       /* case '#/register':
             containerRoot.appendChild(register());
             break;*/
         case '#/post':

@@ -8,6 +8,7 @@ import { createPost, readDataPost } from "../../firebase/firebaseConfig.js";
 export const Post = async () => {
     //window.location.hash = '#/post';
     //const user = getUser();
+  
     const headerPost = document.createElement("header");
     const divPublication = document.createElement("div");
     divPublication.classList.add("post-container");

@@ -47,6 +47,7 @@ export const printComments = (docPost, docId) => {
       }
     });
   });
+  
 
   return printComments
 };

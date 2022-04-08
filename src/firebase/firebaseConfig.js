@@ -5,8 +5,19 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // se importa función para obtener los servicios de firestore y conectar a la BD
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, query, orderBy, updateDoc, deleteDoc, Timestamp, doc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getFirestore, 
+        collection, 
+        addDoc, 
+        getDocs, 
+        onSnapshot, 
+        query, 
+        orderBy, 
+        updateDoc, 
+        deleteDoc, 
+        Timestamp, 
+        doc, 
+        getDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { printComments } from "../lib/views/post.js"
 
 
@@ -86,3 +97,28 @@ export const deleteComment = async (id) => {
     //console.log(deleteComment);
 };
 
+//iniciar sesion con google
+export const checkGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      
+      // The signed-in user info.
+
+      const signedInUser = result.user;
+//window.location.hash='#/wall';
+
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+  };
