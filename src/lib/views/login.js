@@ -1,4 +1,4 @@
-//import { checkGoogle } from "../../firebase/firebaseConfig";
+import { checkGoogle } from "../../firebase/firebaseConfig.js";
 
 export const login = () => {
     window.location.hash = "#/login"
@@ -20,15 +20,24 @@ export const login = () => {
     containerLogin.innerHTML = loginForm
 
     //------------------BTN PARA INICIO SESION CON GOOGLE-------------------
-    /*printPage
-    .querySelector('#btnConfirm')
-    .addEventListener('click', () => {
-      checkGoogle();
-      //;
-    });*/
+   /* const printPage = document.getElementById('root');
+    printPage.innerHTML = loginForm;*/
+  
+  
+    // Evento para ingresar con Google
+    
+      const btnGgl= containerLogin.querySelector('#btnConfirm')
+      btnGgl.addEventListener('click', (logiGoogle) => {
+        logiGoogle.preventDefault()
+        checkGoogle();
+        window.location.hash='#/post';
+        //window.location.hash = "#/wall";
+      });
+  
+  
+    return containerLogin;
 
 
-  return containerLogin;
 };
 
 
