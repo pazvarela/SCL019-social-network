@@ -8,12 +8,11 @@ export const login = () => {
     <div class="imgBarterBook"> 
     <img class="container-img" src="./img/logo-mobil.png" alt="logo BarterBook con un ícono del libro abierto" />
     </div>
-    <h1 class="iniciarsesion" id="iniciarSesion">
-    Log in
-    </h1>
-    
     <div class="btnGoogle">
-        <button class="btnconfirm" id="btnConfirm">Sign In</button>   
+        <button class="btnconfirm" id="btnConfirm">
+        <img class="googleicon" id="iconGoogle" src="./img/google-icon.png" alt="logo google"/> 
+        <p> Log in with Google </p>
+        </button>   
     </div>
 
     </form>`;
