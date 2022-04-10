@@ -1,6 +1,6 @@
 import { header } from "../../components/header.js";
 import { nav } from "../../components/nav.js";
-import { createPost, readDataPost } from "../../firebase/firebaseConfig.js";
+import { createPost, readDataPost, btnLogout } from "../../firebase/firebaseConfig.js";
 //import { collection, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 //import db from '../../firebase/firebaseConfig.js'
@@ -19,10 +19,10 @@ export const Post = async () => {
                 <label for="textTitle" class="textTitle">Title of the book </label>
                 <input type="text" class="textTitle" id="textTitle" required>
                 <br>
-                <label for="DescrpTitle" class="descrpTitle"> Descripción: </label>
+                <label for="DescrpTitle" class="descrpTitle"> Description: </label>
                 <textarea name="textarea" id="textArea" required class="textarea" cols="30" rows="10">"Write a comment..."</textarea>
                 <div class="btn-addPost">
-                    <button type="submint" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
+                    <button type="submit" id="addPost" class="btn-add"><i class="fa-solid fa-circle-plus"></i>Add</button>
                 </div>
             </form>
         </div>
@@ -50,14 +50,23 @@ export const Post = async () => {
        await createPost(inputTitle, textArea);
         
     });
-   
+    
    
     //vaciar textarea
-    const emptyText = divPublication.querySelector("textArea");
+    const emptyText = divPublication.querySelector("#textArea");
     emptyText.addEventListener("focus", () => {
         emptyText.value = "";
     })
-    divPublication.querySelector("#textTitle").value = " ";
+    
+    // limpiar input title
+    divPublication.querySelector("#textTitle").value = "";
+
+    // Evento para cerrar sesión
+    divPublication.querySelector('.btn-logOut').addEventListener('click', () => {
+    btnLogout();
+    });
 
     return divPublication;
 };
+
+

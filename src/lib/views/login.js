@@ -4,18 +4,26 @@ export const login = () => {
     window.location.hash = "#/login"
     const containerLogin = document.createElement('div');
     const loginForm = `
-    <form id = "formAccess" class = "formularioAcceso">
+    <div id="padreintermedio">
+    <div class="fotolibros">
+    <img class="backgroundbb" id="backgroundBB" src="./img/backgroundbb.jpeg" alt="libros con una taza de café"/>
+    </div>
+    <form id="formAccess" class="formularioAcceso">
     <div class="imgBarterBook"> 
     <img class="container-img" src="./img/logo-mobil.png" alt="logo BarterBook con un ícono del libro abierto" />
     </div>
+
+    
     <div class="btnGoogle">
+    <h3 class="inicio"> Let's Begin!</h3>
         <button class="btnconfirm" id="btnConfirm">
         <img class="googleicon" id="iconGoogle" src="./img/google-icon.png" alt="logo google"/> 
         <p> Log in with Google </p>
         </button>   
     </div>
 
-    </form>`;
+    </form>
+    </div>`;
    
     containerLogin.innerHTML = loginForm
 
@@ -27,10 +35,10 @@ export const login = () => {
     // Evento para ingresar con Google
     
       const btnGgl= containerLogin.querySelector('#btnConfirm')
-      btnGgl.addEventListener('click', (logiGoogle) => {
-        logiGoogle.preventDefault()
+      btnGgl.addEventListener('click', (loginGoogle) => {
+        //loginGoogle.preventDefault()
         checkGoogle();
-        window.location.hash='#/post';
+        
         //window.location.hash = "#/wall";
       });
   

@@ -17,7 +17,7 @@ import { getFirestore,
         Timestamp, 
         doc, 
         getDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup,signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 import { printComments } from "../lib/views/post.js"
 
 
@@ -121,4 +121,17 @@ export const checkGoogle = () => {
       const credential = GoogleAuthProvider.credentialFromError(error);
       // ...
     });
+  };
+
+  export const btnLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        console.log('cierre de sesión exitoso');
+        window.location.hash = '#/login';
+      })
+      .catch((error) => {
+        console.log(error);
+        // An error happened.
+      });
   };
