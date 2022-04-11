@@ -15,10 +15,9 @@ export const login = () => {
 
     
     <div class="btnGoogle">
-    <h3 class="inicio"> Let's Begin!</h3>
+    <h3 class="inicio"> SIGN IN </h3> <br>
         <button class="btnconfirm" id="btnConfirm">
         <img class="googleicon" id="iconGoogle" src="./img/google-icon.png" alt="logo google"/> 
-        <p> Log in with Google </p>
         </button>   
     </div>
 
